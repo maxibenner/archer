@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Archer | Dashboard</title>
+	<meta name="description" content="Stay informed about your projects.">
+	<meta property="og:image" content="https://fotura.co/images/social.jpg">
+	<meta property="og:image:width" content="1000">
+	<meta property="og:image:height" content="1000">
+	<link rel="stylesheet" href="./styles.css">
+	<link rel="stylesheet" href="./dashboard.css">
+	<link rel="stylesheet" href="./nav.css">
+	
+</head>
+
+<body>
+
+	<!-- Nav -->
+	<section class='nav'>
+		<!--<img id='nav--logo' src="icons/logo.svg" alt="Fotura logo">-->
+		<div class='nav--logo'></div>
+
+		<!-- Cart -->
+		<div class='global--cart'>
+			<div id='global--cart-icon' class='global--cart-icon'>
+				<div id='global--cart-icon-count' class='global--cart-icon-count'></div>
+				<img src="icons/shoppingcart.svg">
+			</div>
+			<div id='global--cart-body' class='global--cart-body'>
+				<div id='global-cart-body-container-items' class='global-cart-body-container-items'>
+					<!-- Add items -->
+				</div>
+				<div class='global--cart-total'>
+					<h3>Total</h3>
+					<h3>$<span id='global--cart-total-price'></span></h3>
+				</div>
+				<a href='checkout.html'>Checkout</a>
+			</div>
+		</div>
+		<!---->
+
+		<div class='nav--menu' id='nav--menu'>
+			<a href='/dashboard.html' class='nav--active nav--menu-link'>Products</a>
+			<a href='/scenes.html'> Studio</a>
+			<a id='nav--logout'>Logout</a>
+		</div>
+
+		<!-- Hamburger Button-->
+		<div class='nav--menu-button' id='nav--menu-button'>
+			<div class='styles--nav-menu-button-bar-a' id='hamburger--bar-a'></div>
+			<div class='styles--nav-menu-button-bar-b' id='hamburger--bar-b'></div>
+		</div>
+	</section>
+
+	<!-- Content -->
+	<section class='dashboard--content'>
+		<h1>Products</h1>
+
+		<!-- Placeholder -->
+		<div class='dashboard--placeholder-container'>
+			<img src="illustrations/placeholder.svg" alt="placeholder empty">
+			<div>Looks empty here</div>
+			<a id='dashboard--placeholder-button' class='styles--button-dark global--font-button'>Add Product</a>
+		</div>
+
+		<!-- Projects -->
+		<div class='dashboard--projects'>
+			<!-- Programmatically generated project cards-->
+
+			<!-- Add Project --> 
+			<div class='upload--detail' id='dashboard--add-project'> 
+				<div class='upload--detail-center-box'>
+					<!--<img src="../icons/add.svg" alt="add icon" id='upload--detail-button-add'>
+					<p>Add Product</p>-->
+					<form class='disable-select' id='dashboard--add-product-form'>
+						<button class='button-add-product disable-select global--font-button'>Add Product</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Delete Popup -->
+	<div class='dashboard--delete-bg' id='dashboard--delete-bg'></div>
+	<div class="dashboard--delete-container" id='dashboard--delete-container'>
+		<div class='dashboard--delete-header'>
+			<h1>Delete this product?</h1>
+			<p>Doing so will permanently delete this product and all associated images.</p>
+		</div> 
+		<div class='dashboard--delete-body'>
+			<p>Confirm you want to delete this product and all associated images by typing its name: <span
+					id='dashboard--delete-body-project-name'></span></p>
+			<input id='dashboard--delete-body-input' type="text" placeholder='Project Name'>
+			
+			<div>
+				<div class='dashboard--delete-body-button-cancel' id='dashboard--delete-body-button-cancel'>Cancel</div>
+				<div class='dashboard--delete-body-button-delete' id='dashboard--delete-body-button-delete'>Delete</div>
+			</div>
+		</div>
+	</div>
+
+	
+
+	<!-- Project Creation Deactivated popup -->
+	<div class='dashboard--project-creation-notice'>
+		<img id='project-creation-notice-close-icon' class='styles--icon-inline project-creation-notice-close-icon' src="./icons/delete.svg" alt="close window">
+		<h2>We apologize</h2>
+		<p>Due to high demand, you currently can't create projects. We are working hard to increase our capacity!
+		</p>
+		<p>See you soon,</p>
+		<p>Your team at Fotura</p>
+	</div>
+
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDng2cyKBXtbp5J4nma4g2XpLVFP3fa7EY",
+        authDomain: "archer-af112.firebaseapp.com",
+        projectId: "archer-af112",
+        storageBucket: "archer-af112.appspot.com",
+        messagingSenderId: "309388772241",
+        appId: "1:309388772241:web:3858fe9917b440f3495030",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+	
+
+	<script src='lib/moment/moment.min.js'></script>
+	<script src='app.js'></script>
+	<script src='dashboard.js'></script>
+	
+
+</body>
+
+</html>

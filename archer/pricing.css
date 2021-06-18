@@ -1,0 +1,375 @@
+
+
+
+/* ______________________ Page _________________*/
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ______________________ Overlay ______________________________*/
+.index--signup-overlay {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url('./illustrations/patterns/patt.svg');
+    z-index: 3;
+}
+.index--signup-overlay > div {
+    width: 300px;
+    height: fit-content;
+    border-radius: 10px;
+    position: relative;
+    background: white;
+    padding: 5%;
+    z-index: 4;
+}
+.index--signup-overlay > div > h1 {
+    font-size: 2em;
+}
+.index--signup-overlay > div > p {
+    margin-top: 25px;
+}
+
+
+/* ______________________ Signup Input ______________________________*/
+.sign-up-input {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 50px;
+}
+label[for='sign-up-input'] {
+    display: flex;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.sign-up-input > img {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+}
+.sign-up-input > input {
+    display: block;
+    padding: 0;
+    padding-left: 50px;
+    padding-right: 15px;
+    font-size: 1em;
+    flex: 1;
+    height: 50px;
+    border: none;
+    background: var(--greyBg);
+    transition: background-color .2s linear;
+}
+.sign-up-input > input:focus, .sign-up-input > input:active {
+    outline: none;
+}
+.sign-up-input > button {
+    position: relative;
+    display: block;
+    font-size: 1em;
+    height: 50px;
+    width: 150px;
+    color: white;
+    font-weight: bold;
+    background: rgb(66, 53, 242);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    white-space: nowrap;
+    /*margin-left: 10px;*/
+    border: none;
+    transition: box-shadow .2s;
+}
+
+/* Error Message */
+.signUpError{
+    position: absolute;
+    top: 55px;
+    color: var(--err);
+    opacity: 0;
+    transition: .2s;
+}
+
+@media(max-width: 700px){
+    label[for='sign-up-input'] {
+        justify-content: center;
+    }
+    .sign-up-input {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media(max-width: 400px){
+    .sign-up-input {
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+    .sign-up-input > input {
+        flex: unset;
+    }
+    .sign-up-input > button {
+        width: 100%;
+        margin-left:0;
+        margin-top: 10px;
+    }.sign-up-input > img {
+        position: absolute;
+        top: 25%;
+        left: 15px;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+    }
+    .signUpError{
+        position: absolute;
+        top: 120px;
+        color: var(--err);
+        opacity: 0;
+        left: 50%;
+        white-space: nowrap;
+        transform: translateX(-50%);
+        transition: .2s;
+    }
+}
+/* Overrides */
+.sign-up-input-v2 {
+    margin: 0 auto !important;
+}
+
+/* ______________________ Spinner ______________________________*/
+/* Spinner */
+.spinner {
+    display: none;
+	position: absolute;
+    width: 25px;
+	top: 50%;
+	left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Animation */
+#minute{
+    transform-origin: 50% 50%;
+    animation: rotate 1s linear infinite;
+}
+#hour {
+    transform-origin: 50% 50%;
+    animation: rotate 10s linear infinite;
+}
+@keyframes rotate {100% {transform: rotate(360deg)}}
+
+
+/* ______________________ General ______________________________*/
+.pricing--head {
+    line-height: 1em;
+    font-size: 4.2em;
+    max-width: 900px;
+    align-self: center;
+    margin: calc(20vh + 70px) 5% 2% 5%;
+    text-align: center;
+    margin-bottom: 20vh;
+}
+@media(max-width:900px){
+    .pricing--head {
+        font-size: 2.9em;
+    }
+}
+/* ______________________ Titles ______________________________*/
+.index--section-title {
+    margin: 15% 5%;
+    font-size: 2.8em;
+    text-align: center;
+}
+
+
+/* ______________________ Comparison ______________________________*/
+.pricing--comparison {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 5%;
+}   
+.pricing--comparison > div {
+    position: relative;
+    text-align: center;
+    padding: 50px 5%;
+    margin: 0 10px;
+    width: 50%;
+    max-width: 380px;
+    border-radius: 7px;
+    background: var(--greyBg);
+}
+.pricing--comparison > div:last-child {
+    border: 3px solid rgb(66, 53, 242);
+    background: white;
+}
+.pricing--comparison > div > div {
+    height: 85px;
+}
+.pricing--comparison > div > div:last-child {
+    margin-bottom: 40px;
+}
+.pricing--comparison > div > div > h3 {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+.pricing--comparison > div > h2 {
+    font-size: 2em;
+    height: 74px;
+    max-width: 200px;
+    margin: 0 auto 70px auto;
+}
+.pricing--comparison > div:last-child > h2 {
+    line-height: 2em;
+}
+.button-signup{
+    border-radius: 70px;
+    background: rgb(66, 53, 242);
+    color: var(--light);
+    height: 70px;
+    width: 300px;
+    font-size: 1em;
+    cursor: pointer;
+    border: 4px solid rgb(66, 53, 242);
+    outline: none;
+    transition: .5s;
+}
+.button-signup:hover{
+    background: var(--light);
+    color: var(--dark);
+    transition: .2s;
+}
+.pricing--comparison > div > a:hover {
+    background: white;
+    transition: .2s;
+}
+@media(max-width:900px){
+    .pricing--comparison {
+        flex-direction: column;
+        align-items: center;
+    }
+    .pricing--comparison > div {
+        width: 90%;
+    }
+    .pricing--comparison > div:last-child {
+        margin-top: 25px;
+    }
+}
+@media(max-width:400px){
+    .pricing--comparison > div:last-child > h2 {
+        margin-bottom: 25px;
+    }
+    .pricing--comparison > div {
+        padding: 10% 5%;
+    }
+}
+
+/* ______________________ Pricing ______________________________*/
+.pricing--pricing {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 0 5%;
+    align-items: center;
+}
+.pricing--pricing-card-conversion {
+    box-sizing: border-box;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 5%;
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 7px;
+    background: var(--greyBg);
+}
+.pricing--pricing-card-services {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+}
+.pricing--pricing-card-services-small {
+    margin-top: 7%;
+    box-sizing: border-box;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 5%;
+    width: 50%;
+    border-radius: 7px;
+    background: var(--greyBg);
+}
+.pricing--pricing-card-services-small:first-child {margin-right: 3.5%}
+.pricing--pricing-card-services-small:last-child {margin-left: 3.5%}
+.pricing--pricing-card-title {
+    margin: 15px 0;
+}
+.pricing--pricing-card-p {
+    min-height: 72px;
+    color: rgb(83, 83, 83);
+    max-width: 500px;
+    margin: 0 auto 45px auto;
+}
+.pricing--pricing-card-img {
+    margin: 25px 0;
+    max-width: 150px;
+    max-height: 80px;
+}
+
+@media(max-width: 800px){
+    .pricing--pricing-card-services {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 1200px;
+    }
+    .pricing--pricing-card-services-small {
+        width: 100%;
+    }
+    .pricing--pricing-card-services-small:first-child {margin-right: 0}
+    .pricing--pricing-card-services-small:last-child {margin-left: 0}   
+}
+
+/* ______________________ Kicker ______________________________*/
+.index--section-kicker{
+    padding: 15% 5%;
+    margin: 0 auto;
+}
+.index--kicker-title{
+    font-size: 3em;
+    text-align: center;
+    max-width: 700px;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+    margin-bottom: 35px;
+}
+.index--button-center{
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.164);
+}
+.index--kicker-sub{
+    text-align: center;
+    margin-bottom: 15px;
+}
+@media(max-width: 700px){
+    .index--section-kicker{
+        padding: 20% 5%;
+    }
+    .index--kicker-title{
+        font-size: 2em;
+    }
+}

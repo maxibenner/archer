@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Archer | Pricing</title>
+    <meta
+      name="description"
+      content="The most straight forward way to create beautiful product images."
+    />
+    <meta property="og:image" content="https://fotura.co/images/social.jpg" />
+    <meta property="og:image:width" content="1000" />
+    <meta property="og:image:height" content="1000" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/pricing.css" />
+    <link rel="stylesheet" href="/nav.css" />
+  </head>
+
+  <body>
+    <!-- Nav -->
+    <section class="nav nav-absolute">
+      <div class="nav--logo"></div>
+
+      <div class="nav--menu nav--menu-invisible" id="nav--menu">
+        <a class="nav--active nav--menu-link">Pricing</a>
+        <div id="index--button-dashboard">
+          <strong>Dashboard</strong
+          ><img
+            class="styles--icon-inline"
+            src="icons/arrow-right.svg"
+            alt="dashboard arrow"
+          />
+        </div>
+      </div>
+
+      <!-- Hamburger Button-->
+      <div class="nav--menu-button" id="nav--menu-button">
+        <div class="styles--nav-menu-button-bar-a" id="hamburger--bar-a"></div>
+        <div class="styles--nav-menu-button-bar-b" id="hamburger--bar-b"></div>
+      </div>
+    </section>
+
+    <!-- Comparison -->
+    <h1 class="pricing--head">Pricing</h1>
+    <!--
+	<section class='pricing--comparison'>
+		<div>
+			<h2>Traditional Photography</h2>
+
+			<div>
+				<h3>Starting Price</h3>
+				<p>$100 - $1000</p>
+			</div>
+
+			<div>
+				<h3>Set Building</h3>
+				<p>$50 - $10.000</p>
+			</div>
+
+			<div>
+				<h3>Post Production</h3>
+				<p>$5 - $100 per image</p>
+			</div>
+
+			<div>
+				<h3>Turnaround</h3>
+				<p>Weeks</p>
+			</div>
+
+			<div>
+				<h3>Additional Work</h3>
+				<p>You need to transport or ship your products to the photographer</p>
+			</div>
+
+		</div>
+		<div>
+			<h2>Fotura</h2>
+			<div>
+				<h3>Starting Price</h3>
+				<p>$90</p>
+			</div>
+			<div>
+				<h3>Set Building</h3>
+				<p>Free</p>
+			</div>
+			<div>
+				<h3>Post Production</h3>
+				<p>Free</p>
+			</div>
+			<div>
+				<h3>Turnaround</h3>
+				<p>2 days</p>
+			</div>
+			<div>
+				<h3>Additional Work</h3>
+				<p>None. Do it all from home.</p>
+			</div>
+
+			<form action="./sign-up.html">
+				<button class='button-signup'><strong>Get Started</strong> - it's free</button>
+			</form>
+		</div>
+	</section>-->
+
+    <!-- Transition 
+	<h2 class='index--section-title'>Now here come the prices</h2>-->
+
+    <!-- Pricing -->
+    <section class="pricing--pricing">
+      <div class="pricing--pricing-card-conversion">
+        <img
+          class="pricing--pricing-card-img"
+          src="./icons/pricing/conversion.svg"
+        />
+        <h2 class="pricing--pricing-card-title">3D Conversion</h2>
+        <p class="pricing--pricing-card-p">
+          Every product has to be re-created digitally, first. You only pay this
+          price once per product.
+        </p>
+        <h1>Starting at $ 30</h1>
+      </div>
+      <div class="pricing--pricing-card-services">
+        <div class="pricing--pricing-card-services-small">
+          <img
+            class="pricing--pricing-card-img"
+            src="./icons/pricing/interactive.svg"
+          />
+          <h2 class="pricing--pricing-card-title">Interactive Display</h2>
+          <p class="pricing--pricing-card-p">
+            Download your 3D model for use in product viewers or AR
+            applications.
+          </p>
+          <h1>Free</h1>
+        </div>
+        <div class="pricing--pricing-card-services-small">
+          <img
+            class="pricing--pricing-card-img"
+            src="./icons/pricing/photoshoot.svg"
+          />
+          <h2 class="pricing--pricing-card-title">Photostudio</h2>
+          <p class="pricing--pricing-card-p">
+            Order professional photographs of your product. Use it for anything
+            from online shops to social media.
+          </p>
+          <h1>$ 10 <span>/image</span></h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kicker -->
+    <section class="index--section-kicker">
+      <h3 class="index--kicker-sub">Give your product a head start</h3>
+      <h2 class="index--kicker-title">Sign Up Now</h2>
+      <form action="./sign-up.html">
+        <button class="button-signup global--font-button">Get Started</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <section class="global--footer global--font-summary">
+      <a href="/documents/privacyNotice.html">Privacy</a>
+      <a href="/documents/termsOfService.html">Terms</a>
+      <p>© 2020 Fotura, Inc.</p>
+    </section>
+
+    <div id="preload">
+      <img
+        src="./illustrations/patterns/patt.svg"
+        width="1"
+        height="1"
+        alt="Image 01"
+      />
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDng2cyKBXtbp5J4nma4g2XpLVFP3fa7EY",
+        authDomain: "archer-af112.firebaseapp.com",
+        projectId: "archer-af112",
+        storageBucket: "archer-af112.appspot.com",
+        messagingSenderId: "309388772241",
+        appId: "1:309388772241:web:3858fe9917b440f3495030",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="app.js"></script>
+    <script src="pricing.js"></script>
+  </body>
+</html>

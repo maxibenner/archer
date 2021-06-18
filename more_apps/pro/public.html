@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Archer Pro | Public</title>
+	<meta name="description" content="You are just steps away from beautiful product images">
+	<meta property="og:image" content="https://fotura.co/images/social.jpg">
+	<meta property="og:image:width" content="1000">
+	<meta property="og:image:height" content="1000">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="nav.css">
+	<link rel="stylesheet" href="public.css">
+</head>
+
+<body>
+
+	<!-- Nav -->
+	<section class='nav'>
+		<img src="icons/logo.svg" alt="Fotura Pro logo">
+		<div class='nav--menu' id='nav--menu'>
+			<a href='public.html'>Projects</a>
+			<a href='claimed.html'>Claimed</a>
+			<a id='nav--logout'>Logout</a>
+		</div>
+
+		<!-- Hamburger Button-->
+		<div class='styles--nav-menu-button' id='styles--nav-menu-button'>
+			<div class='styles--nav-menu-button-bar-a' id='hamburger--bar-a'></div>
+			<div class='styles--nav-menu-button-bar-b' id='hamburger--bar-b'></div>
+		</div>
+	</section>
+
+	<!-- List -->
+	<section class='public--body'>
+		<h1>Projects</h1>
+		<div><span>Project</span><span>Deadline</span><span>Pay</span></div>
+		<table id='public--projects-table'>
+			<!-- Projects go here -->
+		</table>
+		<svg id='table-spinner' class='spinner' width="100%" height="100%" viewBox="0 0 131 131" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;"><g id="clock"><circle id="ziffernblatt" cx="65.5" cy="65.5" r="60.5" style="fill:#fff;stroke:#000;stroke-width:10px;"/><path id="minute" d="M65.5,65.5l0,-43.5" style="fill:none;stroke:#000;stroke-width:10px;"/><path id="hour" d="M65.5,65.5l19.5,19.5" style="fill:none;stroke:#000;stroke-width:10px;"/></g></svg>
+		<p class='public--projects-table-placeholder'>There are currently no projects.</p>
+	</section>
+
+	<!-- Claim Popup -->
+	<div id='claim-popup-bundle' class='claim-popup-bg'>
+		<div class='claim-popup-container'>
+			<h2>Are you sure you want to claim this project?</h2>
+			<p>You can only claim one project at a time. You won’t be able to cancel the project once you claimed it.</p>
+			<div class='claim-popup-attention-container'>
+				<div>
+					<div>Time Remaining</div>
+					<div id='claim-popup-time'></div>
+				</div>
+				<div>
+					<div>Pay</div>
+					<div id='claim-popup-pay'></div>
+				</div>
+			</div>
+			<a id='claim-popup-cancel' class='claim-popup-cancel'>Cancel</a><a id='claim-popup-confirm' class='claim-popup-confirm' href="">Claim</a>
+			<svg id='claim-spinner' class='spinner' width="100%" height="100%" viewBox="0 0 131 131" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;"><g id="clock"><circle id="ziffernblatt" cx="65.5" cy="65.5" r="60.5" style="fill:#fff;stroke:#000;stroke-width:10px;"/><path id="minute" d="M65.5,65.5l0,-43.5" style="fill:none;stroke:#000;stroke-width:10px;"/><path id="hour" d="M65.5,65.5l19.5,19.5" style="fill:none;stroke:#000;stroke-width:10px;"/></g></svg>
+			
+			<!-- Overlay -->
+			<div id='claim-popup-overlay' class='claim-popup-overlay'>
+				<h3 id='claim-popup-overlay-text'></h3>
+				<img id='claim-popup-overlay-delete' class='claim-popup-overlay-delete' src="./icons/delete-white.svg" alt="delete claim result">
+			</div>
+		</div>
+	</div>
+
+	<!-- Preview Popup -->
+	<div id='preview-popup-bg'>
+		<svg id='preview-spinner' class='spinner' width="100%" height="100%" viewBox="0 0 131 131" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;"><g id="clock"><circle id="ziffernblatt" cx="65.5" cy="65.5" r="60.5" style="fill:#fff;stroke:#000;stroke-width:10px;"/><path id="minute" d="M65.5,65.5l0,-43.5" style="fill:none;stroke:#000;stroke-width:10px;"/><path id="hour" d="M65.5,65.5l19.5,19.5" style="fill:none;stroke:#000;stroke-width:10px;"/></g></svg>
+	</div>
+	<div class='preview-popup-container'>
+		<img id='preview-popup-image'>
+		<div id='preview-popup-close'><img src="icons/delete-white.svg" alt="close preview"></div>
+	</div>
+	
+
+<script src="/__/firebase/7.9.0/firebase-app.js"></script>
+<script src="/__/firebase/7.9.0/firebase-auth.js"></script>
+<script src="/__/firebase/7.9.0/firebase-firestore.js"></script>
+<script src="/__/firebase/7.9.0/firebase-storage.js"></script>
+<script src="/__/firebase/7.9.0/firebase-functions.js"></script>
+<script src="/__/firebase/init.js"></script>
+
+<script src='app.js'></script>
+<script src='lib/moment/moment.min.js'></script>
+<script src='public.js'></script>
+
+</body>
+
+</html>

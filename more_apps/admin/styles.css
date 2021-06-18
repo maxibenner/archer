@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+}
+h1{
+    margin:0;
+}
+h2{
+    margin:0;
+}
+h3{
+    margin:0;
+}
+p{
+    margin:0;
+    line-height: 1.5em;
+}
+input:-webkit-autofill::first-line {font-size: 1rem}
+/* Colors */
+:root {
+    --dark: black;
+    --pink: #FFC1C7;
+    --light: white;
+    --medium: rgb(145, 145, 145);
+    --bg-light: #FAFAFA;
+    --deactivated: rgb(241, 241, 241);
+    --placeholder: rgb(175, 175, 175);
+    --lightestGrey: rgb(220, 220, 220);
+  }
+
+
+
+.global--invisible-input {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    white-space: nowrap;
+    width: 1px; 
+}
+
+
+/* Elements */
+.styles--nav-button-dark{
+    margin-left: 50px;
+    padding: 16px 40px;
+    color: white;
+    background: black;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 0.05em;
+    line-height: 1.6em;
+}
+@media(max-width: 700px){
+    .styles--nav-button-dark{
+        width: max-content;
+        margin: 15px auto;
+        padding: 20px 45px;
+        font-size: 1.3em;
+    }
+}
+.styles--button-dark{
+    padding: 16px 40px;
+    color: white;
+    border-radius: 5px;
+    background: black;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 0.05em;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.11);
+    cursor: pointer;
+}
+.styles--button_disabled {
+	background: var(--deactivated);
+	box-shadow: none;
+    transition: 0.1s;
+    cursor: initial;
+    user-select: none;
+}
+.styles--button-dark:disabled {
+	background: var(--deactivated);
+	box-shadow: none;
+	transition: 0.1s;
+}
+
+
+.styles--nav-menu-button > div {
+    height: 5px;
+    background: var(--dark);
+    margin: 5px 0 5px auto;
+    border-radius: 24px;
+    transition: .3s;
+}
+.styles--nav-menu-button-bar-a {
+    width: 30px;
+}
+.styles--nav-menu-button-bar-b {
+    width: 20px;
+}
+
+/* Styles */
+.margin-left-50{
+    margin-left: 50px;
+}
+.margin-bottom-25{
+    margin-bottom: 25px;
+}
+.styles--italic{
+    font-style: italic;
+}
+.styles--icon-inline{
+    height: 0.8em;
+    width: 0.8em;
+    margin-left: 5px;
+    top: 1px;
+    position: relative;
+}
+.global--download {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+

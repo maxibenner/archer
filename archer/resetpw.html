@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Archer | Reset Password</title>
+    <meta
+      name="description"
+      content="You are just steps away from beautiful product images"
+    />
+    <meta property="og:image" content="https://fotura.co/images/social.jpg" />
+    <meta property="og:image:width" content="1000" />
+    <meta property="og:image:height" content="1000" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/resetpw.css" />
+    <link rel="stylesheet" href="/nav.css" />
+  </head>
+
+  <body>
+    <!-- Nav -->
+    <section class="nav">
+      <div class="nav--logo"></div>
+      <div class="nav--menu" id="nav--menu"></div>
+    </section>
+
+    <!-- Reset Password -->
+    <form action="submit" class="resetpw--container" id="resetpw--form">
+      <h1>Reset Password</h1>
+      <input id="resetpw--input-email" type="email" placeholder="Your email" />
+      <div>Email*</div>
+      <button id="resetpw--button" class="resetpw--form-button">
+        <h3 id="payment-button-txt">Reset Password</h3>
+        <div id="resetpw--loader" class="global--loader">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </form>
+
+    <!-- Confirmation -->
+    <h3
+      id="resetpw--confirmation-container"
+      class="resetpw--confirmation-container"
+    >
+      We sent you an email with instructions on how to reset your password.
+    </h3>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDng2cyKBXtbp5J4nma4g2XpLVFP3fa7EY",
+        authDomain: "archer-af112.firebaseapp.com",
+        projectId: "archer-af112",
+        storageBucket: "archer-af112.appspot.com",
+        messagingSenderId: "309388772241",
+        appId: "1:309388772241:web:3858fe9917b440f3495030",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="resetpw.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

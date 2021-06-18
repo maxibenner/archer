@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Archer | Checkout</title>
+	<meta name="description" content="The most straight forward way to create beautiful product images.">
+	<meta property="og:image" content="https://fotura.co/images/social.jpg">
+	<meta property="og:image:width" content="1000">
+	<meta property="og:image:height" content="1000">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="checkout.css">
+	<link rel="stylesheet" href="nav.css">
+	
+	<!-- Stripe -->
+	<!-- DEMO: <script src="https://js.stripe.com/v3/"></script> -->
+
+</head>
+
+<body>
+ 
+	<!-- Nav -->
+	<section class='nav nav-absolute'>
+		<div class='nav--logo'></div>
+
+		<div class='nav--menu' id='nav--menu'>
+			<a href='dashboard.html' class='nav--menu-link'>Products</a>
+			<a href='scenes.html'>Studio</a>
+			<a id='nav--logout'>Logout</a>
+		</div>
+
+		<!-- Hamburger Button-->
+		<div class='nav--menu-button' id='nav--menu-button'>
+			<div class='styles--nav-menu-button-bar-a' id='hamburger--bar-a'></div>
+			<div class='styles--nav-menu-button-bar-b' id='hamburger--bar-b'></div>
+		</div>
+	</section>
+
+
+	<!-- Pagewide Loader -->
+	<div id='checkout--loader-pagewide' class='global--loader global--loader_black global--loader_fixed'>
+		<span></span>
+		<span></span>
+		<span></span> 
+	</div>
+
+	<!-- Wrapper -->
+	<div class='checkout--wrapper' id='checkout--wrapper'>
+
+		<!-- Cart View -->
+		<div class='checkout-cart-container'>
+			<div class='checkout-cart-container-inner'>
+
+				<!-- Renders -->
+				<div class='checkout-cart-group' id='checkout-cart-group-renders'>
+					<div>Image Renders</div>
+					<div class='checkout-cart-item-container' id='checkout-cart-renders-container'>
+						<!-- Items go here -->
+					</div>
+					<div><span>Turnaround</span><span id='checkout--renders-turnaround'></span></div>
+				</div>
+
+				<!-- Projects -->
+				<div class='checkout-cart-group' id='checkout-cart-group-projects'>
+					<div>Projects</div>
+					<div class='checkout-cart-item-container' id='checkout-cart-projects-container'>
+						<!-- Items go here -->
+					</div>
+					<div><span>Turnaround</span><span>48 hours</span></div>
+				</div>
+				
+
+			</div>
+			<div class='checkout-cart-total'>
+				<span>Total</span>
+				<span class='checkout--price'></span>
+			</div>
+		</div>
+
+		<!-- Payment Form -->
+		<div class='checkout-payment-container' id='checkout-payment-container'>
+
+			<!-- Payment div -->
+			<div id='checkout-payment-before' class='checkout-payment-before'>
+				<form action="/charge" method="post" id="payment-form">
+					<div class="form-row">
+						<label class='checkout--payment-label-card' for="card-element">
+							Credit or Debit Card
+						</label>
+						<div id="card-element">
+							<!-- A Stripe Element will be inserted here. -->
+						</div>
+
+						<!-- Used to display Element errors. -->
+						<div id="card-errors" role="alert"></div>
+					</div>
+
+					<button class='checkout--payment-button-coupon-submit'>
+						<img id='payment-button-lock' class='checkout--payment-button-icon' src="../icons/lock.svg">
+						<h3 id='payment-button-txt' class='global--font-button'>Submit and pay</h3>
+						<div id='checkout--loader-pay' class='global--loader'>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</button>
+
+					<p>By clicking “Submit and pay”, you will be charged <span class='checkout--price'></span>
+						immediately.</p>
+				</form>
+			</div>
+
+			<!-- Free order -->
+			<div id='checkout-payment-before-sample' class='checkout-payment-before'>
+				<form action="/charge" method="post" id="payment-form-sample">
+					<div class="form-row">
+						<h2 style='margin-bottom: 25px;' class='checkout--payment-label-card'>
+							Demo mode
+						</h2>
+						<p style='margin-bottom:30px;'>Purchasing renders is unavailable in demo mode. Send an email to <a class="demo_link" href="mailto:benner@fotura.co"><b>benner@fotura.co</b></a> for technical inquries.</p>
+					</div>
+					<button class='checkout--payment-button-coupon-submit'>
+						<img id='payment-button-lock-sample' class='checkout--payment-button-icon' src="../icons/lock.svg">
+						<h3 id='payment-button-txt-sample' class='global--font-button'>Submit sample order</h3>
+						<div id='checkout--loader-free' class='global--loader'>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</button>
+
+				</form>
+			</div>
+
+			<!-- Success Message -->
+			<div id='checkout-payment-after' class='checkout-payment-after'>
+				<h1><img src="../icons/checkmark.svg">Payment Successful</h1>
+				<h3>We will send you an email once your
+					product is ready.</h3>
+				<a href="../dashboard.html">Back to dashboard<img class='styles--icon-inline'
+						src="../icons/arrow-right.svg"></a>
+			</div>
+		</div>
+
+		<!-- Cart Empty Message -->
+		<div id='checkout-empty-message' class='checkout-empty-message'>
+			<h1>Your cart is empty</h1>
+			<a href="../dashboard.html">Back to dashboard<img class='styles--icon-inline'
+					src="../icons/arrow-right.svg"></a>
+		</div>
+		
+	</div>
+
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-functions.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDng2cyKBXtbp5J4nma4g2XpLVFP3fa7EY",
+        authDomain: "archer-af112.firebaseapp.com",
+        projectId: "archer-af112",
+        storageBucket: "archer-af112.appspot.com",
+        messagingSenderId: "309388772241",
+        appId: "1:309388772241:web:3858fe9917b440f3495030",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+	
+
+	<script src=app.js></script>
+	<script src=checkout.js></script>
+
+</body>
+
+</html>

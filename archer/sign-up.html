@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Archer | Sign Up</title>
+    <meta
+      name="description"
+      content="You are just steps away from beautiful product images"
+    />
+    <meta property="og:image" content="https://fotura.co/images/social.jpg" />
+    <meta property="og:image:width" content="1000" />
+    <meta property="og:image:height" content="1000" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./sign-up.css" />
+    <link rel="stylesheet" href="./nav.css" />
+  </head>
+
+  <body>
+    <!-- Nav -->
+    <section class="nav">
+      <div class="nav--logo"></div>
+      <div class="nav--menu" id="nav--menu"></div>
+    </section>
+
+    <!-- Demo Notice -->
+    <div class="demo_notice">
+      <h1>Demo mode</h1>
+      <p>Sign-up has been deactivated for this showcase.</p>
+      <a href="dashboard.html">
+        <button class="signup--form-button">
+          <h3 class="global--font-button" id="payment-button-txt">
+            Continue to app
+          </h3>
+        </button>
+      </a>
+    </div>
+
+    <!-- Sign Up -->
+    <form action="submit" class="signup--container" id="signup--form">
+      <h1>Sign Up</h1>
+      <input
+        id="signup--input-email"
+        type="email"
+        placeholder="email@domain.com"
+      />
+      <div class="global--font-bodySnippets">Email*</div>
+      <input
+        id="signup--input-password"
+        type="password"
+        placeholder="Enter a password..."
+      />
+      <div class="global--font-bodySnippets">Password*</div>
+      <button id="signup--button" class="signup--form-button">
+        <h3 class="global--font-button" id="payment-button-txt">
+          Create Account
+        </h3>
+        <div id="sign-up--loader" class="global--loader">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+      <p>
+        By clicking “Create Account” above, you acknowledge that you have read
+        and understood, and agree to Fotura’s
+        <a href="./documents/termsOfService.html">Terms of Service</a> and
+        <a href="./documents/privacyNotice.html">Privacy Policy</a>.
+      </p>
+      <p class="signin--legal">
+        Already have an account? <a href="./sign-in.html">Sign In</a>
+      </p>
+    </form>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDng2cyKBXtbp5J4nma4g2XpLVFP3fa7EY",
+        authDomain: "archer-af112.firebaseapp.com",
+        projectId: "archer-af112",
+        storageBucket: "archer-af112.appspot.com",
+        messagingSenderId: "309388772241",
+        appId: "1:309388772241:web:3858fe9917b440f3495030",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="sign-up.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

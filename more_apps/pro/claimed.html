@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Archer Pro | Claimed</title>
+	<meta name="description" content="You are just steps away from beautiful product images">
+	<meta property="og:image" content="https://fotura.co/images/social.jpg">
+	<meta property="og:image:width" content="1000">
+	<meta property="og:image:height" content="1000">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="nav.css">
+	<link rel="stylesheet" href="claimed.css">
+</head>
+
+<body>
+
+	<!-- Nav -->
+	<section class='nav'>
+		<img src="icons/logo.svg" alt="Fotura Pro logo">
+		<div class='nav--menu'>
+			<a href='public.html'>Projects</a>
+			<a class='nav--menu-item-active' href='claimed.html'>Claimed</a>
+			<a id='nav--logout'>Logout</a>
+		</div>
+
+		<!-- Hamburger Button-->
+		<div class='styles--nav-menu-button' id='styles--nav-menu-button'>
+			<div class='styles--nav-menu-button-bar-a' id='hamburger--bar-a'></div>
+			<div class='styles--nav-menu-button-bar-b' id='hamburger--bar-b'></div>
+		</div>
+	</section>
+
+	<!-- Spinner -->
+	<svg id='claim-spinner' class='spinner' width="100%" height="100%" viewBox="0 0 131 131" version="1.1"
+		xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+		xmlns:serif="http://www.serif.com/"
+		style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+		<g id="clock">
+			<circle id="ziffernblatt" cx="65.5" cy="65.5" r="60.5" style="fill:#fff;stroke:#000;stroke-width:10px;" />
+			<path id="minute" d="M65.5,65.5l0,-43.5" style="fill:none;stroke:#000;stroke-width:10px;" />
+			<path id="hour" d="M65.5,65.5l19.5,19.5" style="fill:none;stroke:#000;stroke-width:10px;" />
+		</g>
+	</svg>
+
+	<!-- Placeholder -->
+	<div class='claim-placeholder-container' id='claim-placeholder-container'>
+		<img src="illustrations/placeholder.svg" alt="placeholder empty">
+		<div>No claimed project</div>
+		<a href='public.html' id='claim-placeholder-button' class='styles--button-dark'>Find project</a>
+	</div>
+
+	<!-- Project -->
+	<section id='project-container' class='project-container'>
+		<div class='info-container'>
+			<h1 id='project-name'>PROJECT NAME</h1>
+			<h3>Notes</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+				dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+				ex ea commodo consequat. </p>
+			<h3>Project Views</h3>
+			<div id='project-file-container'>
+
+			</div>
+		</div>
+		<div class='submit-container'>
+			<div>
+				<div>
+					<div>
+						<p>Compensation</p>
+						<h4 id='project-pay'></h4>
+					</div>
+					<div>
+						<p>Deadline</p>
+						<h4 id='project-deadline'></h4>
+					</div>
+					<div>
+						<p>Time Left</p>
+						<h4 id='project-countdown'></h4>
+					</div>
+				</div>
+				<a id='button-submit'>Upload And Submit</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Submit Popup -->
+	<div id='submit-popup-bundle' class='submit-popup-bg'>
+		<div class='submit-popup-container' id='submit-popup-container'>
+			<div class='submit-popup-container-inner'>
+				<div class='submit-popup-container-inner-content'>
+					<h1>Submit project file</h1>
+					<!--<p class='popup-container-sub'>Preview images need to be transparent and 2000 x 1500 pixels.</p>-->
+
+					<h3 class='popup-container-title-inner'>3D Model<span> (.glb)</span></h3>
+					<label for='file-glb' class='popup-container-bar'>
+						<p></p><img src="./icons/upload.svg" alt="upload glb">
+						<div class='popup-container-progress'></div>
+						<input id='file-glb' class='popup-input-file' type="file" accept=".glb" meta='model.glb'>
+					</label>
+
+					<!--<h3 class='popup-container-title-inner'>Preview Image<span> (.png)</span></h3>
+					<label for='file-preview-image' class='popup-container-bar'>
+						<p></p><img src="./icons/upload.svg" alt="upload preview image">
+						<div class='popup-container-progress'></div>
+						<input id='file-preview-image' class='popup-input-file' type="file" accept=".png"
+							meta='preview.png'>
+					</label>-->
+
+				</div>
+
+				<div class='submit-popup-button-container'>
+					<a class='submit-popup-cancel' id='submit-popup-cancel'>Cancel</a>
+					<a id='submit-popup-confirm' class='submit-popup-confirm' for='file-submit'>
+						<div id='submit-popup-confirm-text'>Submit for Review</div>
+						
+						<!-- Spinner-Popup -->
+						<svg id='claim-spinner-popup' class='spinner' width="100%" height="100%" viewBox="0 0 131 131"
+							version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+							xml:space="preserve" xmlns:serif="http://www.serif.com/"
+							style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+							<g id="clock">
+								<circle id="ziffernblatt" cx="65.5" cy="65.5" r="60.5"
+									style="fill:#fff;stroke:#000;stroke-width:10px;" />
+								<path id="minute" d="M65.5,65.5l0,-43.5"
+									style="fill:none;stroke:#000;stroke-width:10px;" />
+								<path id="hour" d="M65.5,65.5l19.5,19.5"
+									style="fill:none;stroke:#000;stroke-width:10px;" />
+							</g>
+						</svg>
+					</a>
+				</div>
+
+			</div>
+		</div>
+
+
+
+		<script src="/__/firebase/7.9.0/firebase-app.js"></script>
+		<script src="/__/firebase/7.9.0/firebase-auth.js"></script>
+		<script src="/__/firebase/7.9.0/firebase-firestore.js"></script>
+		<script src="/__/firebase/7.9.0/firebase-storage.js"></script>
+		<script src="/__/firebase/7.9.0/firebase-functions.js"></script>
+		<script src="/__/firebase/init.js"></script>
+
+		<script src='app.js'></script>
+		<script src='lib/moment/moment.min.js'></script>
+		<script src='claimed.js'></script>
+
+</body>
+
+</html>

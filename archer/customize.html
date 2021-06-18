@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Archer | Customize</title>
+    <meta
+      name="description"
+      content="Tweak the current scene until it fits your product perfectly."
+    />
+    <meta property="og:image" content="https://fotura.co/images/social.jpg" />
+    <meta property="og:image:width" content="1000" />
+    <meta property="og:image:height" content="1000" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/customize.css" />
+    <link rel="stylesheet" href="/nav.css" />
+
+    <!-- Freshchat Code -->
+    <script>
+      function initFreshChat() {
+        window.fcWidget.init({
+          token: "ee26a42a-673b-4f21-8b14-d0d62dcdb3bc",
+          host: "https://wchat.freshchat.com",
+        });
+      }
+      function initialize(i, t) {
+        var e;
+        i.getElementById(t)
+          ? initFreshChat()
+          : (((e = i.createElement("script")).id = t),
+            (e.async = !0),
+            (e.src = "https://wchat.freshchat.com/js/widget.js"),
+            (e.onload = initFreshChat),
+            i.head.appendChild(e));
+      }
+      function initiateCall() {
+        initialize(document, "freshchat-js-sdk");
+      }
+      window.addEventListener
+        ? window.addEventListener("load", initiateCall, !1)
+        : window.attachEvent("load", initiateCall, !1);
+    </script>
+  </head>
+
+  <body>
+    <!-- Nav -->
+    <section class="nav">
+      <div class="nav--logo"></div>
+
+      <!-- Cart -->
+      <div class="global--cart">
+        <div id="global--cart-icon" class="global--cart-icon">
+          <div
+            id="global--cart-icon-count"
+            class="global--cart-icon-count"
+          ></div>
+          <img src="icons/shoppingcart.svg" />
+        </div>
+        <div id="global--cart-body" class="global--cart-body">
+          <div
+            id="global-cart-body-container-items"
+            class="global-cart-body-container-items"
+          >
+            <!-- Cart items go here -->
+          </div>
+          <div class="global--cart-total">
+            <h3>Total</h3>
+            <h3>$<span id="global--cart-total-price"></span></h3>
+          </div>
+          <a href="checkout.html">Checkout</a>
+        </div>
+      </div>
+
+      <div class="nav--menu" id="nav--menu">
+        <a href="/dashboard.html" class="nav--menu-link">Products</a>
+        <a href="scenes.html">Studio</a>
+        <a id="nav--logout">Logout</a>
+      </div>
+      <!-- Hamburger Button-->
+      <div class="nav--menu-button" id="nav--menu-button">
+        <div class="styles--nav-menu-button-bar-a" id="hamburger--bar-a"></div>
+        <div class="styles--nav-menu-button-bar-b" id="hamburger--bar-b"></div>
+      </div>
+    </section>
+
+    <!-- Wrapper -->
+    <section class="wrapper">
+      <!-- Preview Image -->
+      <div class="preview-container">
+        <img
+          id="preview-img"
+          src="./images/scenes/placeholder.jpg"
+          alt="preview image"
+        />
+      </div>
+
+      <!-- Content -->
+      <section class="content-container">
+        <h3>Customize Scene</h3>
+        <h1 id="content-title"></h1>
+
+        <!-- Modules go here-->
+        <div id="modules-container"></div>
+
+        <a id="add-to-cart" class="submit disable-select">Add to cart</a>
+      </section>
+    </section>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDng2cyKBXtbp5J4nma4g2XpLVFP3fa7EY",
+        authDomain: "archer-af112.firebaseapp.com",
+        projectId: "archer-af112",
+        storageBucket: "archer-af112.appspot.com",
+        messagingSenderId: "309388772241",
+        appId: "1:309388772241:web:3858fe9917b440f3495030",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="app.js"></script>
+    <script src="customize.js"></script>
+  </body>
+</html>

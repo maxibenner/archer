@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Archer | Sign In</title>
+	<meta name="description" content="You are just steps away from beautiful product images">
+	<meta property="og:image" content="https://fotura.co/images/social.jpg">
+	<meta property="og:image:width" content="1000">
+	<meta property="og:image:height" content="1000">
+	<link rel="stylesheet" href="/styles.css">
+	<link rel="stylesheet" href="/sign-in.css">
+	<link rel="stylesheet" href="/nav.css">
+</head>
+
+<body>
+
+	<!-- Nav -->
+	<section class='nav'>
+		<div class='nav--logo'></div>
+		<div class='nav--menu' id='nav--menu'>
+		</div>
+	</section>
+
+	<!-- Sign In -->
+	<form action="submit" class='signin--container' id='signin--form'>
+		<h1>Sign In</h1>
+		<input id='signin--input-email' type="email" placeholder='Your email'>
+		<div class='global--font-bodySnippets'>Email*</div>
+		<input id='signin--input-password' type="password" placeholder='Your password'>
+		<div class='global--font-bodySnippets'>Password*</div>
+		<button id='signin--button' class='signin--form-button'>
+			<h3 class='global--font-button' id='payment-button-txt'>Sign In</h3>
+			<div id='signin--loader' class='global--loader'>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</button>
+		<p class='signin--legal'>Don't have an account yet? <a href='./sign-up.html'>Sign Up</a></p>
+		<p class='signin--forgotpw'><a href="./resetpw.html">I forgot my password</a></p>
+	</form>
+
+
+
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDng2cyKBXtbp5J4nma4g2XpLVFP3fa7EY",
+        authDomain: "archer-af112.firebaseapp.com",
+        projectId: "archer-af112",
+        storageBucket: "archer-af112.appspot.com",
+        messagingSenderId: "309388772241",
+        appId: "1:309388772241:web:3858fe9917b440f3495030",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+	<script src='sign-in.js'></script>
+	<script src='app.js'></script>
+
+</body>
+
+</html>

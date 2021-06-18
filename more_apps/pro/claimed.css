@@ -1,0 +1,315 @@
+
+.project-container { 
+    margin-top: 20vh;
+    box-sizing: border-box;
+    position: relative;
+    display: none;/*flex*/
+    max-width: 1200px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.info-container, .submit-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 5%;
+    padding: 0 5% 5% 5%;
+}
+
+
+
+/* Propject side */
+.info-container {
+    margin-bottom: 50px;
+}
+.info-container > h1 {
+    font-size: 3em;
+    margin-bottom: 50px;
+}
+.info-container > h3 {
+    font-size: 1em;
+    margin-bottom: .5em;
+}
+.info-container > p {
+    color: #6F6F6F;
+    margin-bottom: 50px;
+}
+
+/* File Container */
+.info-container > div > div {
+    display: flex;
+}
+.info-container > div > div > div {
+    background: rgb(230, 230, 230);
+    height: 1px;
+    width: 100%;
+    margin: auto 15px;
+}
+.info-container > div > div > p:last-child {
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: underline;
+}
+.info-container > div > div > p:last-child:hover {
+    color: grey;
+}
+.file-list-name {
+    white-space: nowrap;
+}
+
+
+
+
+/* Submit Side */
+.submit-container {
+    height: fit-content;
+    margin-top: 105px;
+}
+.submit-container > div {
+    width: 100%;
+    border: 2px solid #00F2A6;
+    border-radius: 10px;
+    padding: 10%;
+    background: white;
+    box-sizing: border-box;
+}
+.submit-container > div> div {
+    margin-bottom: 20px;
+}
+.submit-container > div > div > div {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: space-between;
+}
+.submit-container > div > div > div > h4 {
+    margin: 0 0 25px 0;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.submit-container > div > div > div > h4 > sup {
+    font-size: .7em;
+}
+.submit-container > div > div > div > p {
+    width: max-content;
+}
+.submit-container > div > a {
+    display: flex;
+    color: white;
+    background: #00F2A6;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+@media(min-width:800px){
+    .info-container{
+        margin-right: 2.5%;
+    }
+    .submit-container{
+        margin-left: 2.5%;
+    }
+}
+@media(max-width: 800px){
+    .project-container {
+        flex-direction: column;
+        margin: 20vh 0 10% 0;
+    }
+    .info-container, .submit-container {
+        padding: 0;
+        width: 90%;
+        max-width: unset;
+    }
+    .submit-container {
+        margin-top: 0;
+    }
+    .submit-container > div {
+        box-shadow: none;
+    }
+}
+
+
+/* Spinner */
+.spinner {
+    position: absolute;
+    display: block;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 12.5px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+} 
+
+/* Animation */
+#minute{
+    transform-origin: 50% 50%;
+    animation: rotate 1s linear infinite;
+}
+#hour {
+    transform-origin: 50% 50%;
+    animation: rotate 10s linear infinite;
+}
+@keyframes rotate {100% {transform: rotate(360deg)}}
+
+
+/* Submit Popup */
+.submit-popup-bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    z-index: 4;
+}
+.submit-popup-container{
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    max-width: 400px;
+    background: white;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.submit-popup-container-inner-content {
+    padding: 10%;
+}
+.popup-container-sub {
+    margin: 20px 0;
+    border: 2px solid #00F0A8;
+    padding: 7px;
+    line-height: 1.3em;
+}
+.popup-container-title-inner {
+    margin: 20px 0 5px 0;
+    font-size: 1em;
+}
+.popup-container-title-inner > span {
+    font-weight: normal;
+}
+.popup-container-bar {
+    background: #F0F0F0;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 7px;
+    position: relative;
+    display: flex;
+}
+.popup-container-progress {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background: #00F0A8;
+    transition: .4s;
+}
+.popup-container-bar > img {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    margin: auto 5px auto auto;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+.popup-container-bar > p {
+    line-height: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: 1;
+    font-size: .9em;
+}
+.submit-popup-button-container {
+    display: flex;
+}
+.submit-popup-cancel {
+    padding: 15px 0;
+    border-bottom-left-radius: 10px;
+    display: inline-block;
+    background: #FAFAFA;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    width: 50%;
+    cursor: pointer;
+}
+.submit-popup-confirm {
+    position: relative;
+    padding: 15px 0;
+    border-bottom-right-radius: 10px;
+    display: inline-block;
+    background: #00F0A8;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    width: 50%;
+    transition: opacity .3s;
+    opacity: .2;
+}
+#claim-spinner-popup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@media(max-width: 400px){
+    .submit-popup-container{
+        border-radius: 0;
+    }
+    .submit-popup-overlay {
+        border-radius: 0;
+    }
+    .submit-popup-cancel {border-bottom-left-radius: 0;}
+    .submit-popup-confirm {border-bottom-right-radius: 0;}
+}
+
+/* Input */
+[type="file"] {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	white-space: nowrap;
+	width: 1px; 
+}
+
+
+/* Placeholder */
+.claim-placeholder-container{
+	display: none;
+	max-width: 220px;
+	text-align: center;
+	position: absolute;
+	margin: 0 auto;
+    top: 50%;
+    left: 50%;
+	transform: translate(-50%, -50%);
+} 
+.claim-placeholder-container > img {
+	max-width: 180px;
+}
+.claim-placeholder-container > div {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-bottom: 25px;
+}

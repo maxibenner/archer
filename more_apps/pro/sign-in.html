@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Archer Pro | List</title>
+	<meta name="description" content="You are just steps away from beautiful product images">
+	<meta property="og:image" content="https://fotura.co/images/social.jpg">
+	<meta property="og:image:width" content="1000">
+	<meta property="og:image:height" content="1000">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="nav.css">
+	<link rel="stylesheet" href="sign-in.css">
+</head>
+
+<body>
+
+	<!-- Nav -->
+	<section class='nav'>
+		<img src="icons/logo.svg" alt="Fotura logo">
+		<div class='nav--menu'>
+		</div>
+	</section>
+
+	<!-- Sign Up -->
+	<form class='signup--container' id='signup--container'>
+        <h1>Sign In</h1>
+        <div>Email</div>
+        <input id='signup--input' type="email" placeholder='Enter your email address...'>
+        <button id='signup--button' class='signup--button'>
+			<h3 id='payment-button-txt'>Continue with Email</h3>
+			<svg id='payment-button-spinner' class='submit-spinner' width="100%" height="100%" viewBox="0 0 131 131" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;"><g id="clock"><circle id="ziffernblatt" cx="65.5" cy="65.5" r="60.5" style="fill:#fff;stroke:#000;stroke-width:10px;"/><path id="minute" d="M65.5,65.5l0,-43.5" style="fill:none;stroke:#000;stroke-width:10px;"/><path id="hour" d="M65.5,65.5l19.5,19.5" style="fill:none;stroke:#000;stroke-width:10px;"/></g></svg>
+		</button>
+        <p>By clicking “Continue with email” above, you acknowledge that you have read and understood, and agree to Fotura’s <a href='./documents/termsOfService.html'>Terms of Service</a> and <a href='./documents/privacyNotice.html'>Privacy Notice</a>.</p>
+	</form>
+	
+
+	<!-- Preload -->
+	<div id="preload">
+		<img src="./illustrations/patterns/patt.png" width="1" height="1" alt="Image 01" />
+	 </div>
+
+
+<script src="/__/firebase/7.9.0/firebase-app.js"></script>
+<script src="/__/firebase/7.9.0/firebase-auth.js"></script>
+<script src="/__/firebase/init.js"></script>
+
+<script src='sign-in.js'></script>
+
+</body>
+
+</html>

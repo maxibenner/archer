@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Cloud Walker</title>
+    <link rel="stylesheet" href="ecom.css">
+    <link rel="stylesheet" href="../nav.css">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class='disable-select'>
+
+    <section class='nav nav-fixed-transparent'>
+        <!--<img id='nav--logo' src="icons/logo.svg" alt="Fotura logo">-->
+        <div class='nav--logo nav--logo-light'></div>
+
+        <!-- Cart -->
+        <div class='global--cart'>
+            <div id='global--cart-icon' class='global--cart-icon'>
+                <div id='global--cart-icon-count' class='global--cart-icon-count'></div>
+                <img src="../icons/shoppingcart-light.svg">
+            </div>
+            <div id='global--cart-body' class='global--cart-body'>
+                <div id='global-cart-body-container-items' class='global-cart-body-container-items'>
+                    <!-- Add items -->
+                </div>
+                <div class='global--cart-total'>
+                    <h3>Total</h3>
+                    <h3>$<span id='global--cart-total-price'></span></h3>
+                </div>
+                <a href='../checkout.html'>Checkout</a>
+            </div>
+        </div>
+        <!---->
+
+        <div class='nav--menu nav--menu-dark' id='nav--menu'>
+            <a href='/dashboard.html' class='nav--menu-link'>Products</a>
+            <a href='/scenes.html'>Studio</a>
+            <a id='nav--logout'>Logout</a>
+        </div>
+
+        <!-- Hamburger Button-->
+        <div class='nav--menu-button nav--menu-button-light' id='nav--menu-button'>
+            <div class='styles--nav-menu-button-bar-a' id='hamburger--bar-a'></div>
+            <div class='styles--nav-menu-button-bar-b' id='hamburger--bar-b'></div>
+        </div>
+    </section>
+
+    <section class='ecom--wrapper'>
+        <!-- Loader -->
+        <div id='ecom--loader' class='global--loader global--loader_fixed global--loader_fixed_nonCenter'>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!--Viewer-->
+        <div class='ecom--viewer'>
+            <!-- THREE.JS -->
+        </div>
+
+        <!-- Controlpanel -->
+        <div class='ecom--controlpanel' id='ecom--control-panel'>
+
+            <!-- Bar -->
+            <div class='ecom--controlpanel-bar' id='ecom--controlpanel-bar'>
+                <img class='ecom--icon-minimize disable-select' id='ecom--icon-minimize' src="../icons/expand.svg" alt="">
+                <div class='ecom--controlpanel-bar-mover' id='ecom--controlpanel-bar-mover'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span> 
+                </div>
+                
+            </div>
+
+            <div class='ecom--controlpanel-container-inner' id='ecom--controlpanel-container-inner'>
+                
+                <h2>Customize</h2>
+
+                <!-- Product Orientation-->
+                <div class='ecom--cumstomize-container'>
+
+                    <p>X Rotation</p>
+                    <div class='ecom--prod-turn'>
+                        <div id='ecom--prod-turn-x-neg'>
+                            <img src="../icons/arrow-right.svg">
+                        </div>
+                        <div id='ecom--prod-turn-x-pos'>
+                            <img src="../icons/arrow-right.svg">
+                        </div>
+                    </div>
+
+                    <p>Y Rotation</p>
+                    <div class='ecom--prod-turn'>
+                        <div id='ecom--prod-turn-y-neg'>
+                            <img src="../icons/arrow-right.svg">
+                        </div>
+                        <div id='ecom--prod-turn-y-pos'>
+                            <img src="../icons/arrow-right.svg">
+                        </div>
+                    </div>
+
+                    <p>Z Rotation</p>
+                    <div class='ecom--prod-turn'>
+                        <div id='ecom--prod-turn-z-neg'>
+                            <img src="../icons/arrow-right.svg">
+                        </div>
+                        <div id='ecom--prod-turn-z-pos'>
+                            <img src="../icons/arrow-right.svg">
+                        </div>
+                    </div>
+
+                    <p class='ecom--transparency-effector'><span>Down</span><span>Up</span></p>
+                    <div class='ecom--transparency-effector'>
+                        <input type="range" min="-100" max="100" value="0" class="slider" id="ecom--prod-height" />
+                    </div>
+
+                </div>
+ 
+                
+            </div>
+            <!-- Submit -->
+            <div class='ecom--button-submit-bg'></div>
+            <button id='ecom--button-submit' class='button-addToCart button-addToCart_inactive global--font-button'>
+                Take Photo
+            </button>
+        </div> 
+
+        <!-- View blocker -->
+        <div class='ecom--wrapper-blocker' id='ecom--wrapper-blocker'></div>
+
+        <!-- Spacer for Safari -->
+        <div class='ecom--spacer-safari'>
+            <div></div>
+        </div>
+
+    </section>
+
+    <script src="/__/firebase/7.9.0/firebase-app.js"></script>
+    <script src="/__/firebase/7.9.0/firebase-auth.js"></script>
+    <script src="/__/firebase/7.9.0/firebase-firestore.js"></script>
+    <script src="/__/firebase/7.9.0/firebase-storage.js"></script>
+    <script src="/__/firebase/7.14.2/firebase-analytics.js"></script>
+    <script src="/__/firebase/init.js"></script>
+
+    <script src='../lib/threejs/three.min.js'></script>
+    <script src='../lib/threejs/GLTFLoader.js'></script>
+    <script src='../lib/threejs/Reflector.js'></script>
+
+    <script src='../app.js'></script>
+    <script src='ecom-cloud_walker.js'></script>
+</body>
+
+</html>

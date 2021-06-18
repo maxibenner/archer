@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Archer | Add product</title>
+	<meta name="description" content="Create a new product">
+	<meta property="og:image" content="https://fotura.co/images/social.jpg">
+	<meta property="og:image:width" content="1000">
+	<meta property="og:image:height" content="1000">
+	<link rel="stylesheet" href="./styles.css">
+	<link rel="stylesheet" href="./create.css">
+	<link rel="stylesheet" href="./nav.css">
+</head>
+
+<body>
+
+	<!------------ Nav ------------>
+	<section class='nav nav-fixed-borderless-shadow'>
+		<div class='nav--logo'></div>
+
+		<!-- Cart -->
+		<div class='global--cart'>
+			<div id='global--cart-icon' class='global--cart-icon'>
+				<div id='global--cart-icon-count' class='global--cart-icon-count'></div>
+				<img src="./icons/shoppingcart.svg">
+			</div>
+			<div id='global--cart-body' class='global--cart-body'>
+				<div id='global-cart-body-container-items' class='global-cart-body-container-items'>
+					<!-- Add items -->
+				</div>
+				<div class='global--cart-total'>
+					<h3>Total</h3>
+					<h3>$<span id='global--cart-total-price'>20</span></h3>
+				</div>
+				<a href='../checkout.html'>Checkout</a>
+			</div>
+		</div>
+		<!----> 
+
+		<div class='nav--menu' id='nav--menu'>
+			<a href='./dashboard.html' class='nav--menu-link'>Products</a>
+			<a href="./scenes.html">Studio</a>
+			<a id='nav--logout'>Logout</a>
+		</div>
+
+		<!-- Hamburger Button-->
+		<div class='nav--menu-button' id='nav--menu-button'>
+			<div class='styles--nav-menu-button-bar-a' id='hamburger--bar-a'></div>
+			<div class='styles--nav-menu-button-bar-b' id='hamburger--bar-b'></div>
+		</div>
+	</section>
+
+
+	<!------------ Elements ------------>
+	<section>
+
+		<!------------ Upload/Create Popup ------------>
+		<div class='create--popup-choice' id='create--popup-choice'>
+			<div id='create--popup-choice-container-cards-create' class='create--popup-choice-container-cards'
+				id='create--popup-choice-create'>
+				<img class='disable-select' src="./illustrations/dashboard--choice-images.svg">
+				<h2 class='disable-select'>3D Product 
+					Conversion</h2>
+					<p class='disable-select create--popup-choice-order-p'>Upload snapshots of your 
+						product. We’ll turn them into a 
+						digital 3D model.</p>
+				<h3 class='disable-select'><span>Starting at</span><br>$30</h3>
+			</div>
+			<div id='create--popup-choice-container-cards-upload' class='create--popup-choice-container-cards'>
+				<img class='disable-select' src="./illustrations/dashboard--choice-product.svg">
+				<h2 class='disable-select'>Upload existing 
+					3D files
+					<!--<span class='create-choice-upload-free'>Free</span>-->
+				</h3>
+					<p class='disable-select'>Are you an industrial 
+						designer and already have a 
+						3D model? Upload it here.
+					</p>
+					<h3 class='disable-select'>Free</h3>
+			</div>
+			
+		</div>
+
+		<!------------ Label Product ------------>
+		<div id='create--label-wrapper' class='create--label-wrapper disable-select'>
+			<h1>Label your product</h1>
+			<p>Check all categories that apply to your product.</p>
+			<div class='create--label-card-container'>
+				<div class='create--label-card' meta='industrial'>
+					<img class='create--label-card-img' src="./icons/label-industrial.svg" alt="">
+					<div class='create--label-card-body'>
+						<h3>Machine Made</h3>
+						<p>My product is <span>3D printed</span>, <span>machined</span>, <span>cast</span>, etc.</p>
+					</div>
+				</div>
+				<div class='create--label-card' meta='handmade'>
+					<img class='create--label-card-img' src="./icons/label-handmade.svg" alt="">
+					<div class='create--label-card-body'>
+						<h3>Handmade</h3>
+						<p>My product is produced by hand. <span>Handpainted</span>, <span>sculpted</span>, <span>carved</span>, etc.</p>
+					</div>
+				</div>
+				<div class='create--label-card' meta='plant'>
+					<img class='create--label-card-img' src="./icons/label-plant.svg" alt="">
+					<div class='create--label-card-body'>
+						<h3>Plant</h3>
+						<p>My product is a plant.</p>
+					</div>
+				</div>
+				<div class='create--label-card' meta='food'>
+					<img class='create--label-card-img' src="./icons/label-food.svg" alt="">
+					<div class='create--label-card-body'>
+						<h3>Unpackaged Food</h3>
+						<p>My product is an unpackaged food item like a <span>wrap</span>, a <span>salad</span>, a <span>burger</span>, etc.</p>
+					</div>
+				</div>
+				<div class='create--label-card' meta='clothing'>
+					<img class='create--label-card-img' src="./icons/label-clothing.svg" alt="">
+					<div class='create--label-card-body'>
+						<h3>Clothing</h3>
+						<p>My product is a piece of clothing like a <span>sweater</span>, a <span>scarf</span>, <span>shoes</span>, etc.</p>
+					</div>
+				</div>
+			</div>
+			<button id='create--label-continue-button' class='create--label-continue-button global--font-button'>
+				Continue
+				<img src='icons/arrow-right-white.svg'>
+			</button>
+		</div>
+
+		<!-- Label Fail -->
+		<div id='create--label-fail-wrapper' class='create--label-fail-wrapper disable-select'>
+			<h1>Uh Oh...</h1>
+			<p>Unfortunately we don’t yet support the following types of products:</p>
+			<div class='create--label-fail-card-container'>
+				<div class='create--label-fail-card' meta='plant'>
+					<h3>Plants</h3>
+				</div>
+				<div class='create--label-fail-card' meta='food'>
+					<h3>Unpackaged Foods</h3>
+				</div>
+				<div class='create--label-fail-card' meta='clothing'>
+					<h3>Clothing</h3>
+				</div>
+			</div>
+			<div class='create--label-fail-radio-container'>
+				<div id='create--label-fail-radio-box' class='create--label-fail-radio-box'>
+					<img id='create--label-fail-radio-checkmark' class='create--label-fail-radio-checkmark' src="./icons/checkmarkOnly.svg" alt="">
+				</div>
+				<p>Send me an email once my product is supported</p>
+			</div>
+			<button id='create--label-fail-dashboard-button' class='create--label-fail-dashboard-button global--font-button'>
+				Back to Dashboard
+			</button>
+		</div>
+
+
+		<!------------ Name ------------>
+		<!--DEMO: <form class='create--name-container' id='create--name-form'>
+			<h1>Name your product</h1>
+			<input autocomplete="off" id='create--name-form-input' type="text" placeholder='Best product ever'>
+			<div>Project Name*</div>
+			<button class='global--font-button global--font-button' id='create--name-button' disabled='disabled'>Continue<img class='styles--icon-inline'
+					src="../icons/arrow-right-white.svg" alt="arrow right">
+			</button>
+		</form> -->
+		<form class='create--name-container' id='create--name-form'>
+			<h1>Demo mode</h1>
+			<p>Saving projects is unavailable in demo mode.</p>
+			<button id='create--name-button' class='global--font-button global--font-button'>Back to dashboard</button>
+		</form>
+
+	
+		<!------------ Upload Model ------------> 
+		<div class='create--upload-model-container' id='create--upload-model-container'>
+			<h1>Upload Your Model</h1>
+			<p>Our systems runs on <strong>.glb</strong> files. Make sure you export your model in the right format.</p>
+
+			<div class='create--upload-model-container-card' id='create--upload-model-container-card'>
+				<input id='create--upload-model-container-card-input' accept=".glb" type="file">
+				<img src="../illustrations/product.png">
+				<p id='create--upload-model-container-card-text' class='global--font-bodySnippets'>Choose File</p>
+				<div class='create--upload-model-container-card-bg' id='create--upload-model-container-card-bg'></div>
+			</div>
+		</div>
+
+		<!------------ Upload Images ------------>
+		<div id='create--images-uploader-wrapper' class='create--images-uploader-wrapper'>
+			<h1>Upload</h1>
+			<div class='create--images-disclaimer'> 
+				<div class='create--images-disclaimer-icon-container'>
+					<img class='create--images-disclaimer-icon' src="./icons/attention.svg" alt="">
+					<h3>Important</h3>
+				</div>
+				<div class='create--images-disclaimer-text-container'>
+					<div>
+						<div class='global--bulletpoint_light'></div>
+						<p>Upload photos showing your product from <span class='global--underline'>all sides</span>. </p>
+					</div>
+					<div>
+						<div class='global--bulletpoint_light'></div>
+						<p>Upload labels or graphic design elements as <span class='global--underline'>scans or original design files</span> in order to bring the price down.</p>
+					</div>
+				</div>
+
+			</div>  
+			<div class='create--images-upload-group'>
+				<!--<h3 class='create--images-upload-group-title'>Images</h3>-->
+				<div id='create--images-droparea' class='create--images-dnd-container'>
+					<input type="file" id="create--images-input" multiple accept="image/*">
+					<div class='create--images-dnd-container-inner'>
+						<img class='create--images-dnd-icon' src="./icons/dragndrop.svg" alt="">
+						<h3 class='create--images-dnd-text'><span class='create--images-dnd-text_mobile'><span class='create--images-dnd-text_blue'>Drag and drop</span> or</span> Browse files</h3>
+					</div>
+				</div>
+				<div id='create--dnd-file-container' class='create--dnd-file-container'>
+
+					<!-- Files go here --> 
+		
+				</div>
+			</div>
+			<button id='create--images-quote-button' class='create--images-quote-button global--font-button' disabled='disabled'>
+				Request Quote
+				<div id='create--images--loader' class='global--loader'>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</button>
+		</div>
+
+		<!-- Quote Success -->
+		<div id='create--quote-success' class='create--quote-success'>
+			<h1><!--<img src="../icons/checkmark.svg">-->Submitted</h1>
+			<h3>We will usually have your quote ready within 5 minutes.</h3>
+			<a href="./dashboard.html">Back to dashboard<img class='styles--icon-inline'
+					src="../icons/arrow-right.svg"></a>
+		</div>
+
+	</section>
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDng2cyKBXtbp5J4nma4g2XpLVFP3fa7EY",
+        authDomain: "archer-af112.firebaseapp.com",
+        projectId: "archer-af112",
+        storageBucket: "archer-af112.appspot.com",
+        messagingSenderId: "309388772241",
+        appId: "1:309388772241:web:3858fe9917b440f3495030",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+	
+
+	<script src=app.js></script>
+	<script src=create.js></script>
+
+</body>
+
+</html>

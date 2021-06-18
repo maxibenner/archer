@@ -1,0 +1,307 @@
+
+.dashboard--placeholder-container{
+	display: none;
+	max-width: 220px;
+	text-align: center;
+	position: relative;
+	margin: 10% auto;
+} 
+.dashboard--placeholder-container > img {
+	max-width: 180px;
+}
+.dashboard--placeholder-container > div {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-bottom: 25px;
+}
+.dashboard--content {
+	display: block;
+	box-sizing: border-box;
+	margin: 15vh auto;
+	padding: 0 5%;
+	max-width: 1600px;
+}
+.dashboard--content > h1 {
+	font-size: 3em;
+}
+
+
+/* Project Card Element */
+.dashboard--projects{
+	display: none;
+	grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+	gap: 1.5rem;
+	margin-top: 50px;
+}
+.dashboard--project-container {
+	position: relative;
+	overflow: hidden;
+	height: fit-content;
+	width: auto;
+	border-radius: 10px;
+	cursor: pointer;
+	/*box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);*/
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+	transition: 0.3s;
+}
+.dashboard--container-delete{
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	right: 6px;
+	top: 6px;
+	padding: 7px;
+	border-radius: 3px;
+	opacity: 0.2;
+	transition: 0.1s;
+}
+.dashboard--container-delete:hover{
+	opacity: 0.6;
+	transition: 0.1s;
+}
+.dashboard--project-container-focus{
+	transform: scale(0.98);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+}
+.dashboard--container-img{
+	background-size: cover;
+	background-color: var(--greyBg);
+	background-position: center;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	height: 200px;
+	width: 100%;
+	padding: 30px;
+}
+.dashboard--container-img > h3 {
+	font-size: 1em;
+}
+.dashboard--container-img > img {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	margin: 0 auto;
+}
+.dashboard--container-txt{
+	padding: 15px 15px;
+	position: relative;
+}
+.dashboard--container-txt > h3 {
+	overflow-x: hidden;
+}
+.dashboard--container-txt > p {
+	color: var(--medium);
+	font-size: 0.9em;
+	font-family: IBMPlexSans;
+}
+.dashboard--container-flag {
+	background: var(--blue);
+	display: flex;
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 60px;
+	top: 0;
+	left: 0;
+	transform-origin: 50% 0%;
+	transform: translateX(-50%) rotate(-45deg);
+}
+.dashboard--container-flag > h3 {
+	color: var(--light);
+	position: relative;
+	font-size: 1em;
+	margin-top: 22px;
+}
+
+
+/* Project Creation Notice Popup */
+.dashboard--project-creation-notice {
+	display: none;
+	box-sizing: border-box;
+	position: fixed;
+	width: 100%;
+	max-width: 400px;
+	height: auto;
+	background: white;
+	box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
+	border-radius: 7px;
+	padding: 50px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.dashboard--project-creation-notice > h2 {
+	margin-bottom: 10px;
+}
+.dashboard--project-creation-notice > p:nth-child(2) {
+	margin-bottom: 20px;
+}
+.dashboard--project-creation-notice > p:nth-child(4) {
+	margin-top: 10px;
+	text-decoration: underline;
+	text-decoration-style: wavy;
+	text-decoration-skip-ink: none;
+	text-decoration-color: #339AFF;
+}
+.project-creation-notice-close-icon {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	cursor: pointer;
+}
+.project-creation-notice-close-icon:hover {
+	opacity: .7;
+}
+@media(max-width: 400px){
+	.dashboard--project-creation-notice {
+		border-radius: 0;
+	}
+}
+
+
+
+
+/* Delete Popup */
+.dashboard--delete-bg {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.2);
+	opacity: 0;
+	z-index: 3;
+	transition: 0.2s;
+}
+.dashboard--delete-container{
+	display: none;
+	position: fixed;
+	overflow: hidden;
+	border-radius: 15px;
+	width: auto;
+	max-width: 500px;
+	min-width: 300px;
+	height: auto;
+	top: 50%;
+	left: 50%;
+	transform-origin: 0% 0%;
+	transform: scale(0.9) translate(-50%,-50%);
+	margin: 0 auto;
+	background: var(--light);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+	opacity: 0;
+	z-index: 4;
+	transition: 0.2s;
+}
+.dashboard--delete-header {
+	background: #FF4E47;
+	color: var(--light);
+	padding: 7%;
+}
+.dashboard--delete-header > h1 {
+	margin-bottom: 10px;
+}
+.dashboard--delete-body {
+	padding: 7%;
+	position: relative;
+}
+.dashboard--delete-body > p {
+	color: var(--medium);
+	margin-bottom: 4%;
+}
+.dashboard--delete-body > p > span {
+	color: var(--dark);
+	font-weight: bold;
+	font-family: ;
+}
+.dashboard--delete-body > input {
+	box-sizing: border-box;
+    height: 50px;
+	width: 100%;
+	max-width: 200px;
+    border: none;
+    border-bottom: 1px solid var(--dark);
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    outline: none;
+	-webkit-appearance: none;
+	margin-bottom: 4%;
+}
+.dashboard--delete-body > div {
+	display: flex;
+	width: max-content;
+	margin: 0 0 0 auto;
+}
+.dashboard--delete-body-button-delete{
+	padding: 10px 15px;
+	background: var(--lightestGrey);
+	color: var(--placeholder);
+	border-radius: 5px;
+	margin-left: 20px;
+	font-weight: bold;
+}
+.dashboard--delete-body-button-cancel{
+	border-radius: 5px;
+	color: var(--medium);
+	padding: 10px 15px;
+	cursor: pointer;
+	transition: 0.2s;
+}
+@media(max-width:400px){
+	.dashboard--delete-container{
+		width: 100%;
+		border-radius: 0;
+	}
+	.dashboard--delete-body > input {
+		width: 100%;
+	}
+}
+
+/* Add Project Block */
+.button-add-product{
+    border-radius: 70px;
+    background: rgb(66, 53, 242);
+    color: var(--light);
+    height: 50px;
+    width: 80%;
+    font-size: 1em;
+    cursor: pointer;
+	border: 4px solid rgb(66, 53, 242);
+	outline: none;
+    transition: .5s;
+}
+.button-add-product:hover{
+    background: var(--light);
+    color: var(--dark);
+    transition: .2s;
+}
+.upload--detail{
+	position: relative;
+	height: 160px;
+	width: auto;
+	display: flex;
+	justify-content: center;
+	padding: 20px 0;
+	transition: 0.2s;
+	margin: auto 0;
+	/*box-shadow: 0 5px 15px rgba(0, 0, 0, 0.068);*/
+}
+.upload--detail-center-box {
+	width: 100%;
+	height: min-content;
+	text-align: center;
+	margin: auto 0;
+}
+@media(max-width: 415px){
+	.button-add-product{
+		width: 90%;
+	}
+}

@@ -1,0 +1,118 @@
+
+
+/* ______________________ Demo Notice ______________________________*/
+.demo_notice {
+    position: absolute;
+    margin: 5% auto;
+    box-sizing: border-box;
+	width: 280px;
+	height: fit-content;
+	top: 20vh;
+	left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+.demo_notice > h1 {
+    font-size: 3em;
+    margin-bottom: 30px;
+}
+
+/* ______________________ Sign Up ______________________________*/
+.signup--container {
+    /* Inactive */
+    cursor: default!important;
+    pointer-events: none!important;
+    opacity: .1;
+    /* ______ */
+    position: absolute;
+    margin: 5% auto;
+    box-sizing: border-box;
+	width: 280px;
+	height: fit-content;
+	top: 20vh;
+	left: 50%;
+    transform: translateX(-50%);
+}
+.signup--container > h1 {
+    font-size: 3em;
+    margin-bottom: 30px;
+}
+.signup--container > div {
+    margin-bottom: 5px;
+}
+.signup--container > input { 
+    box-sizing: border-box;
+    height: 50px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--dark);
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    outline: none;
+    -webkit-appearance: none;
+}
+.signup--form-button{
+    border-radius: 70px;
+    background: var(--light);
+    height: 50px;
+    width: 100%;
+    font-size: 1em;
+    cursor: pointer;
+    border: 4px solid rgb(66, 53, 242);
+    transition: .5s;
+    outline: none;
+    margin: 25px 0;
+}
+.signup--form-button_pending {
+    background: var(--blue)!important;
+}
+.signup--form-button:hover{
+    background: rgb(66, 53, 242);
+    color: var(--light);
+    transition: .2s;
+}
+.signup--form-button > h3 {
+    font-weight: normal;
+}
+.signup--container > p {
+    color: rgb(155, 155, 155);
+    font-size: 0.8em;
+}
+.signup--button > h3 {
+    font-size: 1em;
+}
+.signup--container > p > a {
+    text-decoration: underline;
+    color: black;
+}
+.submit-spinner {
+    display: none;
+    position: absolute;
+    width: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
+/* Animation */
+#minute{
+    transform-origin: 50% 50%;
+    animation: rotate 1s linear infinite;
+}
+#hour {
+    transform-origin: 50% 50%;
+    animation: rotate 10s linear infinite;
+}
+@keyframes rotate {100% {transform: rotate(360deg)}}
+
+
+
+/* Media */
+@media(max-width: 400px){
+    .signup--container > h1 {
+        margin-bottom: 25px;
+    }
+}
