@@ -26,11 +26,11 @@ A management panel to approve artists, and interact with pending jobs and quotes
 
 ## FAQ
 
-**Can I use the output files for my PoD store or social?**
+**Can I order images?**
 <br />
-Yes. Let me know if you do, I'm curious to see them!
+No, this project has been discontinued. The github page exists to showcase what it once was. If you are really excited about it, feel free to contact me on github or through benner@fotura.co.
 <br />
 <br />
-**Do you take feature requests?**
+**Did the images fool people to think they were real photos?**
 <br />
-No, this project is in maintenance mode.
+Yes, everyone. I still enjoy the fact that photographers suggested I'd retouch the leaves in one of the images.
