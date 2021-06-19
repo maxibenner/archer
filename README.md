@@ -1,8 +1,8 @@
-# Archer :camera:
+# Virtual photo studio :camera:
 
 [![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fmaxibenner%2Fmerch)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fmaxibenner%2Farcher)
 
-Archer is a photo studio that runs in the browser. It enables brands to create photorealistic images from 3D models. Archer is made up of three apps:
+A CG based photo studio that runs in the browser. It enables brands to create photorealistic images from 3D models and artists to accept modelling jobs. It consists of three separate apps:
 
 ## Archer
 The customer facing app provides the virtual photo studio as well as an interface to order 3D models from snapshots of a product.
