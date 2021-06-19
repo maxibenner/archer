@@ -34,6 +34,6 @@ A management panel to approve artists, and interact with pending jobs and quotes
 No, this project has been discontinued. The github page exists to showcase what it once was. If you are really excited about it, feel free to contact me on github or through benner@fotura.co.
 <br />
 <br />
-**Did the images fool people to think they were real photos?**
+**Did the images fool people into thinking they were real photos?**
 <br />
-Yes, everyone. I still enjoy the fact that photographers suggested I'd retouch the leaves in one of the images.
+Yes, everyone. I still cherish the time when a photographer suggested I retouch the brown spots on the leaves in the scincare image.
