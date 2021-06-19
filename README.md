@@ -21,6 +21,12 @@ A management panel to approve artists, and interact with pending jobs and quotes
 # Images
 <img src="./tool.jpg" width="500px">
 <img src="./dashboard.jpg" width="500px">
+<img src="./archer/images/index/landing-1.jpg" width="500px">
+<img src="./archer/images/index/landing-2.jpg" width="500px">
+<img src="./archer/images/index/landing-3.jpg" width="500px">
+<img src="./archer/images/index/landing-4.jpg" width="500px">
+<img src="./archer/images/index/landing-5.jpg" width="500px">
+<img src="./archer/images/index/landing-6.jpg" width="500px">
 <img src="./archer/images/scenes/ecom.jpg" width="500px">
 <img src="./archer/images/scenes/ecom-leaves.jpg" width="500px">
 <img src="./archer/images/scenes/ecom-cloud_walker.png" width="500px">
