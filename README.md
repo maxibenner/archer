@@ -15,9 +15,8 @@ A marketplace extension that allows CG artists to submit quotes for modelling jo
 ## Admin
 A management panel to approve artists, and interact with pending jobs and quotes.
 
-
-
-
+# Images
+## App
 <img src="./tool.jpg">
 
 ## FAQ
