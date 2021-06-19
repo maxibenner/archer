@@ -1,6 +1,6 @@
 # archer :camera:
 
-[![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fmaxibenner%2Fmerch)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fmaxibenner%2Fteeshot)
+[![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fmaxibenner%2Fmerch)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fmaxibenner%2Farcher)
 
 Teeshot is a tool to create CG images and animations of t-shirt designs.
 
