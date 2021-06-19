@@ -14,6 +14,9 @@ A marketplace extension that allows CG artists to submit quotes for modelling jo
 
 ## Admin
 A management panel to approve artists, and interact with pending jobs and quotes.
+
+## Server
+A python app that interfaces with a headless version of Blender. It re-creates the scenes built in the browser inside of Blender to render them out via cycles.
 <br />
 <br />
 <br />
