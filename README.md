@@ -7,7 +7,7 @@ Teeshot is a tool to create CG images and animations of t-shirt designs.
 
 [Live Demo](https://archer.fotura.co)
 
-<img src="./readme_preview.jpg">
+<img src="./tool.jpg">
 
 ## FAQ
 
