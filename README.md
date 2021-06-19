@@ -19,10 +19,10 @@ A management panel to approve artists, and interact with pending jobs and quotes
 <br />
 <br />
 # Images
-<img src="./tool.jpg" width="50%">
-<img src="./archer/images/scenes/ecom.jpg" width="50%">
-<img src="./archer/images/scenes/ecom-leaves.jpg" width="50%">
-<img src="./archer/images/scenes/ecom-cloud_walker.png" width="50%">
+<img src="./tool.jpg" width="500px">
+<img src="./archer/images/scenes/ecom.jpg" width="500px">
+<img src="./archer/images/scenes/ecom-leaves.jpg" width="500px">
+<img src="./archer/images/scenes/ecom-cloud_walker.png" width="500px">
 
 ## FAQ
 
