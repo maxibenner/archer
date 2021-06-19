@@ -2,7 +2,7 @@
 
 [![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fmaxibenner%2Fmerch)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fmaxibenner%2Farcher)
 
-A CG based photo studio that runs in the browser. It enables brands to create photorealistic images from 3D models and artists to accept modelling jobs. It consists of three separate apps:
+A CG based photo studio that runs in the browser. It enables brands to create photorealistic images from 3D models and artists to accept modelling jobs. It consists of three separate web apps and one microservice:
 
 ## Archer
 Archer is the customer facing app and contains the virtual photo studio as well as an interface to order 3D models from snapshots of a product. 
