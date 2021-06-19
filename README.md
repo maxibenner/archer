@@ -5,7 +5,8 @@
 A CG based photo studio that runs in the browser. It enables brands to create photorealistic images from 3D models and artists to accept modelling jobs. It consists of three separate apps:
 
 ## Archer
-Archer is the customer facing app and contains the virtual photo studio as well as an interface to order 3D models from snapshots of a product.
+Archer is the customer facing app and contains the virtual photo studio as well as an interface to order 3D models from snapshots of a product. 
+[Live Demo](https://archer.fotura.co)
 
 ## Pro
 A marketplace extension that allows CG artists to submit quotes for modelling jobs submitted through Archer. Jobs can be submitted through the Pro app and appear directly in customers inventories.
@@ -14,7 +15,7 @@ A marketplace extension that allows CG artists to submit quotes for modelling jo
 A management panel to approve artists, and interact with pending jobs and quotes.
 
 
-[Live Demo](https://archer.fotura.co)
+
 
 <img src="./tool.jpg">
 
