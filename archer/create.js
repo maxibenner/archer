@@ -75,14 +75,14 @@ if (redirect) {
 
 
 /*__________________________________ Track Auth State ____________________________________*/
-firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-        userId = user.uid
-        if (nameInput.value) {
-            nameButton.disabled = false
-        }
-    }
-})
+//DEMO: firebase.auth().onAuthStateChanged(function (user) {
+//     if (user) {
+//         userId = user.uid
+//         if (nameInput.value) {
+//             nameButton.disabled = false
+//         }
+//     }
+// })
 
 /*__________________________________ Listeners ___________________________________*/
 

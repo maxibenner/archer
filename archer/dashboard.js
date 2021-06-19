@@ -41,7 +41,7 @@ const popupProjectChoiceCreate = document.getElementById(
 );
 
 /*____________________ References ______________________*/
-const blockerRef = firebase.firestore().collection("settings").doc("blockers");
+//DEMO:const blockerRef = firebase.firestore().collection("settings").doc("blockers");
 
 /*__________________________ Variables ___________________________*/
 let activeProject = sessionStorage.getItem("activeProject");
@@ -66,8 +66,8 @@ let userId;
 // });
 
 // DEMO
-addProjectCard();
-checkProjectBlocker();
+//DEMO:addProjectCard();
+//DEMO:checkProjectBlocker();
 //____________
 
 /*__________________________ Init ___________________________*/
@@ -80,11 +80,14 @@ populateCart(cartItemContainer);
 addProjectForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  if (projectCreation === true) {
-    window.location.href = "create.html";
-  } else {
-    projectBlockerNotice.style.display = "initial";
-  }
+  //DEMO
+  window.location.href = "create.html";
+  //______
+  //DEMO: if (projectCreation === true) {
+  //   window.location.href = "create.html";
+  // } else {
+  //   projectBlockerNotice.style.display = "initial";
+  // }
 });
 
 // Project blocker close
@@ -337,190 +340,184 @@ function projectClickListener(cardContainer, projectData) {
 }
 
 // Build card container
-function addProjectCard() {
-  if (window.location.href.includes("dashboard")) {
-    // Get projects container element
-    const projectsContainer = document.querySelector(".dashboard--projects");
+//DEMO: function addProjectCard() {
+//   if (window.location.href.includes("dashboard")) {
+//     // Get projects container element
+const projectsContainer = document.querySelector(".dashboard--projects");
 
-    // First clear all elements
-    let projectsArray = document.querySelectorAll(
-      ".dashboard--project-container"
-    );
-    projectsArray.forEach((child) => {
-      child.remove();
-    });
+//     // First clear all elements
+//     let projectsArray = document.querySelectorAll(
+//       ".dashboard--project-container"
+//     );
+//     projectsArray.forEach((child) => {
+//       child.remove();
+//     });
 
-    // Get data from firestore
-    firebase
-      .firestore()
-      .collection("users")
-      .doc("demo")//nonDEMO:userId
-      .collection("projects")
-      .get()
-      .then((querySnapshot) => {
-        // Set placeholder if no data exists
-        if (querySnapshot.empty) {
-          // Add placeholder
-          placeholder.style.display = "block";
-          // Remove 'add project button'
-          addProjectContainer.style.display = "none";
+//     // Get data from firestore
+//     firebase
+//       .firestore()
+//       .collection("users")
+//       .doc("demo")//nonDEMO:userId
+//       .collection("projects")
+//       .get()
+//       .then((querySnapshot) => {
+//         // Set placeholder if no data exists
+//         if (querySnapshot.empty) {
+//           // Add placeholder
+//           placeholder.style.display = "block";
+//           // Remove 'add project button'
+//           addProjectContainer.style.display = "none";
 
-          // Show sample card only
-        } else {
-          // Remove placeholder
-          placeholder.style.display = "none";
+//           // Show sample card only
+//         } else {
+//           // Remove placeholder
+//           placeholder.style.display = "none";
 
-          // Add project grid
-          const content = document.querySelector(".dashboard--projects");
-          content.style.display = "grid";
+// Add project grid
+//DEMO:const content = document.querySelector(".dashboard--projects");
+/*DEMO:*/ const contentNew = document.querySelector(".dashboard--projects");
+/*content*/ contentNew.style.display = "grid";
 
-          querySnapshot.forEach((doc) => {
-            let projectData = doc.data();
-            console.log(projectData)
+//DEMO:
+let querySnapshot = [
+  { status: "Completed", sample: true, submitDate: 1624025561870 },
+];
+//_____
+querySnapshot.forEach((doc) => {
+  let projectData = doc; //DEMO:.data();
+  //DEMO:
+  doc.id = "sample";
+  console.log(projectData);
+  //_____
 
-            // Create Project Card Elements
-            const cardContainer = document.createElement("div");
-            const cardContainerImg = document.createElement("div");
-            const cardDeleteButton = document.createElement("img");
-            const cardContainerTxt = document.createElement("div");
-            const cardStatus = document.createElement("h3");
-            const cardSpinner = document.createElement("img");
-            const cardProject = document.createElement("h3");
-            const cardDate = document.createElement("p");
-            const cardFlag = document.createElement("div");
-            const cardFlagText = document.createElement("h3");
+  // Create Project Card Elements
+  const cardContainer = document.createElement("div");
+  const cardContainerImg = document.createElement("div");
+  const cardDeleteButton = document.createElement("img");
+  const cardContainerTxt = document.createElement("div");
+  const cardStatus = document.createElement("h3");
+  const cardSpinner = document.createElement("img");
+  const cardProject = document.createElement("h3");
+  const cardDate = document.createElement("p");
+  const cardFlag = document.createElement("div");
+  const cardFlagText = document.createElement("h3");
 
-            // Get element references
-            const addProjectE = document.querySelector(
-              "#dashboard--add-project"
-            );
+  // Get element references
+  const addProjectE = document.querySelector("#dashboard--add-project");
 
-            // Append elements
-            projectsContainer.insertBefore(cardContainer, addProjectE);
-            cardContainer.append(cardContainerImg);
-            cardContainer.append(cardContainerTxt);
+  // Append elements
+  projectsContainer.insertBefore(cardContainer, addProjectE);
+  cardContainer.append(cardContainerImg);
+  cardContainer.append(cardContainerTxt);
 
-            // Delete Button
-            if (
-              (projectData.status !== "Quote pending" &&
-                projectData.submitDate === null &&
-                projectData.status !== "pending" &&
-                projectData.status !== "Check quote") ||
-              projectData.status === "Completed"
-            ) {
-              cardContainer.append(cardDeleteButton);
-            }
-            cardContainerImg.append(cardStatus);
-
-            if (
-              projectData.submitDate !== null &&
-              projectData.status !== "Completed"
-            ) {
-              cardContainerImg.append(cardSpinner);
-            }
-            if (
-              projectData.status === "pending" ||
-              projectData.status === "Quote pending"
-            ) {
-              cardContainerImg.append(cardSpinner);
-            }
-            cardContainerTxt.append(cardProject);
-            cardContainerTxt.append(cardDate);
-
-            // If sample
-            if (projectData.sample == true) {
-              cardContainer.append(cardFlag);
-              cardFlag.append(cardFlagText);
-            }
-
-            let projectIdWithoutWhitespace = doc.id.replace(/\s/g, "-");
-
-            // Set content and attributes
-            if (projectData.sample === undefined) {
-              cardContainer.setAttribute(
-                "class",
-                "dashboard--project-container"
-              );
-            }
-            if (projectData.sample === true) {
-              cardContainer.setAttribute(
-                "class",
-                "dashboard--project-container sample"
-              );
-            }
-            cardContainer.setAttribute(
-              "id",
-              "dashboard--project-container-" + projectIdWithoutWhitespace
-            );
-            cardContainer.setAttribute("meta", doc.id);
-            cardDeleteButton.setAttribute(
-              "class",
-              "dashboard--container-delete"
-            );
-            cardDeleteButton.setAttribute("src", "icons/delete.svg");
-            cardContainerImg.setAttribute("class", "dashboard--container-img");
-            cardFlag.setAttribute("class", "dashboard--container-flag");
-            cardFlagText.textContent = " Try me";
-
-            // Change to live images
-            if (projectData.status === "Completed") {
-              if (projectData.thumbnail !== undefined) {
-                cardContainerImg.style["background-image"] =
-                  "url(" + projectData.thumbnail + ")";
-              } else {
-                if (projectData.sample === true) {
-                  cardContainerImg.style["background-image"] =
-                    "url('/images/scenes/ecom.jpg')";
-                } else {
-                    console.log("haha")
-                  // Didn't exist... or some other error
-                  cardContainerImg.style["background-image"] =
-                    'url("/illustrations/placeholder-dashboard.png")';
-                  cardContainerImg.style["background-size"] = "cover";
-                }
-              }
-            } else {
-              cardContainerImg.style["background-color"] = "#FAFAFA";
-            }
-
-            // Show status until completion
-            if (projectData.status !== "Completed") {
-              cardStatus.innerHTML = projectData.status;
-            }
-            cardSpinner.setAttribute("src", "icons/spinner-thick.svg");
-            cardSpinner.setAttribute("alt", "loading icon");
-            cardContainerTxt.setAttribute("class", "dashboard--container-txt");
-            cardDeleteButton.setAttribute("meta", doc.id);
-            cardProject.innerHTML = doc.id;
-
-            // Only show date submitted after submission
-            if (projectData.submitDate !== null) {
-              cardDate.innerHTML = moment(projectData.submitDate)
-                .local()
-                .format("MMMM Do - HH:mm");
-            } else {
-              cardDate.innerHTML = "Not yet submitted";
-            }
-
-            // Remove pointer on hover during wait time
-            if (
-              (projectData.submitDate !== null &&
-                projectData.status !== "Completed") ||
-              projectData.status === "pending" ||
-              projectData.status === "Quote pending"
-            ) {
-              cardContainer.style.cursor = "default";
-              cardContainer.style["box-shadow"] = "0 0 0 2px var(--bg-light)";
-              //cardContainer.style.background = '#FAFAFA'
-            }
-
-            openDeleteListener(cardDeleteButton);
-            projectClickListener(cardContainer, projectData);
-          });
-        }
-      });
+  // Delete Button
+  if (
+    (projectData.status !== "Quote pending" &&
+      projectData.submitDate === null &&
+      projectData.status !== "pending" &&
+      projectData.status !== "Check quote") ||
+    projectData.status === "Completed"
+  ) {
+    cardContainer.append(cardDeleteButton);
   }
-}
+  cardContainerImg.append(cardStatus);
+
+  if (projectData.submitDate !== null && projectData.status !== "Completed") {
+    cardContainerImg.append(cardSpinner);
+  }
+  if (
+    projectData.status === "pending" ||
+    projectData.status === "Quote pending"
+  ) {
+    cardContainerImg.append(cardSpinner);
+  }
+  cardContainerTxt.append(cardProject);
+  cardContainerTxt.append(cardDate);
+
+  // If sample
+  if (projectData.sample == true) {
+    cardContainer.append(cardFlag);
+    cardFlag.append(cardFlagText);
+  }
+
+  let projectIdWithoutWhitespace = doc.id.replace(/\s/g, "-");
+
+  // Set content and attributes
+  if (projectData.sample === undefined) {
+    cardContainer.setAttribute("class", "dashboard--project-container");
+  }
+  if (projectData.sample === true) {
+    cardContainer.setAttribute("class", "dashboard--project-container sample");
+  }
+  cardContainer.setAttribute(
+    "id",
+    "dashboard--project-container-" + projectIdWithoutWhitespace
+  );
+  cardContainer.setAttribute("meta", doc.id);
+  cardDeleteButton.setAttribute("class", "dashboard--container-delete");
+  cardDeleteButton.setAttribute("src", "icons/delete.svg");
+  cardContainerImg.setAttribute("class", "dashboard--container-img");
+  cardFlag.setAttribute("class", "dashboard--container-flag");
+  cardFlagText.textContent = " Try me";
+
+  // Change to live images
+  if (projectData.status === "Completed") {
+    if (projectData.thumbnail !== undefined) {
+      cardContainerImg.style["background-image"] =
+        "url(" + projectData.thumbnail + ")";
+    } else {
+      if (projectData.sample === true) {
+        cardContainerImg.style["background-image"] =
+          "url('/images/scenes/ecom.jpg')";
+      } else {
+        console.log("haha");
+        // Didn't exist... or some other error
+        cardContainerImg.style["background-image"] =
+          'url("/illustrations/placeholder-dashboard.png")';
+        cardContainerImg.style["background-size"] = "cover";
+      }
+    }
+  } else {
+    cardContainerImg.style["background-color"] = "#FAFAFA";
+  }
+
+  // Show status until completion
+  if (projectData.status !== "Completed") {
+    cardStatus.innerHTML = projectData.status;
+  }
+  cardSpinner.setAttribute("src", "icons/spinner-thick.svg");
+  cardSpinner.setAttribute("alt", "loading icon");
+  cardContainerTxt.setAttribute("class", "dashboard--container-txt");
+  cardDeleteButton.setAttribute("meta", doc.id);
+  cardProject.innerHTML = doc.id;
+
+  // Only show date submitted after submission
+  if (projectData.submitDate !== null) {
+    cardDate.innerHTML = moment(projectData.submitDate)
+      .local()
+      .format("MMMM Do - HH:mm");
+  } else {
+    cardDate.innerHTML = "Not yet submitted";
+  }
+
+  // Remove pointer on hover during wait time
+  if (
+    (projectData.submitDate !== null && projectData.status !== "Completed") ||
+    projectData.status === "pending" ||
+    projectData.status === "Quote pending"
+  ) {
+    cardContainer.style.cursor = "default";
+    cardContainer.style["box-shadow"] = "0 0 0 2px var(--bg-light)";
+    //cardContainer.style.background = '#FAFAFA'
+  }
+
+  openDeleteListener(cardDeleteButton);
+  projectClickListener(cardContainer, projectData);
+});
+//DEMO:         }
+//       });
+//   }
+// }
 
 // Open delete listener
 function openDeleteListener(cardDeleteButton) {

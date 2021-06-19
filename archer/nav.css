@@ -229,8 +229,8 @@
     }
     .nav--logo {
         background-image: url('./icons/logo-glyph.svg');
-        width: 15px;
-        background-size: 15px;
+        width: 19px;
+        background-size: 19px;
         position: relative;
         justify-self: center;
     }

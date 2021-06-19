@@ -8,11 +8,11 @@
 
 
 /*_________________ Cloud Functions ____________________*/
-const createPaymentIntent = firebase.functions().httpsCallable('createPaymentIntent')
-const updatePaymentIntent = firebase.functions().httpsCallable('updatePaymentIntent')
-const saveTaskDataToFirestore = firebase.functions().httpsCallable('saveTaskDataToFirestore')
-const deleteTaskDataFromFirestore = firebase.functions().httpsCallable('deleteTaskDataFromFirestore')
-const submitSampleData = firebase.functions().httpsCallable('submitSampleData')
+//DMEO: const createPaymentIntent = firebase.functions().httpsCallable('createPaymentIntent')
+// const updatePaymentIntent = firebase.functions().httpsCallable('updatePaymentIntent')
+// const saveTaskDataToFirestore = firebase.functions().httpsCallable('saveTaskDataToFirestore')
+// const deleteTaskDataFromFirestore = firebase.functions().httpsCallable('deleteTaskDataFromFirestore')
+// const submitSampleData = firebase.functions().httpsCallable('submitSampleData')
 
 
 /*___________________ Element References __________________________*/

@@ -252,26 +252,45 @@ function setImage(userId, projectName) {
 // Set renders
 async function setRenders(userId, container) {
   // Render collection reference
-  let renderRef = await firebase
-    .firestore()
-    .collection("users")
-    .doc(userId)
-    .collection("renders")
-    .get();
+  //DEMO: let renderRef = await firebase
+  //   .firestore()
+  //   .collection("users")
+  //   .doc(userId)
+  //   .collection("renders")
+  //   .get();
 
   // CREATE BATCHES
   let renderBatches = [];
 
+  //DEMO
+  let renderRef = [
+    {
+      id: "ecom",
+      render: { projectName: "sample", sceneName: "Ecom" },
+      status: "Completed",
+      timeOfSubmission: 1624025511870,
+    },
+    {
+      id: "colorful",
+      render: { projectName: "sample", sceneName: "Leaves" },
+      status: "progress",
+      timeOfSubmission: 1624025561870,
+    },
+  ];
+  //______
+
   // Add to batches array
   renderRef.forEach((doc) => {
-    let renderData = doc.data();
+    //DEMO:let renderData = doc.data();
+    let renderData = doc;
+    //_______
 
     // Filter for correct project
     if (renderData.render.projectName === projectName) {
       // Remove placeholder
-      if (doc.data().length !== 0) {
-        noImagesPlaceholder.style.display = "none";
-      }
+      //DEMO:if (doc.data().length !== 0) {
+      noImagesPlaceholder.style.display = "none";
+      //DEMO:}
 
       // Filter for uniqueness
       if (renderBatches.includes(renderData.timeOfSubmission)) {
@@ -301,7 +320,9 @@ async function setRenders(userId, container) {
 
   // Assign images to batches
   renderRef.forEach((doc) => {
-    let renderData = doc.data();
+    //DEMO:let renderData = doc.data();
+    let renderData = doc;
+    //_______
 
     // Filter for correct project
     if (renderData.render.projectName === projectName) {
@@ -341,14 +362,14 @@ async function setRenders(userId, container) {
         // Click Listener
         img.addEventListener("click", () => {
           console.log(sessionStorage.getItem("project"));
-          let imgRef = firebase
-            .storage()
-            .ref()
-            .child("users")
-            .child(userId)
-            .child("projects")
-            .child(sessionStorage.getItem("project"))
-            .child("images");
+          //DEMO: let imgRef = firebase
+          //   .storage()
+          //   .ref()
+          //   .child("users")
+          //   .child(userId)
+          //   .child("projects")
+          //   .child(sessionStorage.getItem("project"))
+          //   .child("images");
 
           // Exchange download icon for percentage
           imgContainer.removeChild(img);

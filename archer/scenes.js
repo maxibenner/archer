@@ -11,7 +11,7 @@ const iconDropdown = document.getElementById("dropdown-icon");
 const cardButtons = document.querySelectorAll(".scenes--button");
 
 /*__________________________ References ___________________________*/
-const scenesRef = firebase.firestore().collection("scenes");
+//DEMO:const scenesRef = firebase.firestore().collection("scenes");
 
 /*__________________________ Variables ___________________________*/
 let scenesArrayLength = null;
@@ -21,12 +21,12 @@ setCartCounter(cartCounter);
 populateCart(cartItemContainer);
 
 /*____________________ Track Auth State ______________________*/
-firebase.auth().onAuthStateChanged(function (user) {
-  if (user) {
-    // Init
-    getCompletedProjectsOfUser(user.uid);
-  }
-});
+//DEMO:: firebase.auth().onAuthStateChanged(function (user) {
+//   if (user) {
+//     // Init
+//     getCompletedProjectsOfUser(user.uid);
+//   }
+// });
 
 //DEMO
 getCompletedProjectsOfUser("demo");
@@ -90,37 +90,42 @@ cardButtons.forEach((button) => {
 
 // Get all completed projects
 function getCompletedProjectsOfUser(userId) {
-  let projectArray = [];
+  // Pre added objects to local array
+  let projectArray = [{ name: "sample", sample: true }];
+  // DEMO:
+  insertProjectsIntoDropdown(optionsDropdown, projectArray);
+  //_____
 
   // Get data from firestore
-  firebase
-    .firestore()
-    .collection("users")
-    .doc(userId)
-    .collection("projects")
-    .where("status", "==", "Completed")
-    .get()
-    .then((docs) => {
-      docs.forEach((doc) => {
-        let projectName = doc.id;
-        let sample;
-        // Get sample state
-        if (doc.data().sample !== undefined) {
-          sample = true;
-        } else {
-          sample = false;
-        }
+  //DEMO: firebase
+  //   .firestore()
+  //   .collection("users")
+  //   .doc(userId)
+  //   .collection("projects")
+  //   .where("status", "==", "Completed")
+  //   .get()
+  //   .then((docs) => {
+  //     docs.forEach((doc) => {
+  //       let projectName = doc.id;
+  //       let sample;
+  //       // Get sample state
+  //       if (doc.data().sample !== undefined) {
+  //         sample = true;
+  //       } else {
+  //         sample = false;
+  //       }
 
-        projectArray.push({ name: projectName, sample: sample });
-      });
+  //       projectArray.push({ name: projectName, sample: sample });
+  //     });
 
-      insertProjectsIntoDropdown(optionsDropdown, projectArray);
-    });
+  //     insertProjectsIntoDropdown(optionsDropdown, projectArray);
+  //   });
 }
 
 // Insert Projects Into Dropdown
 function insertProjectsIntoDropdown(container, projects) {
   projects.forEach((project) => {
+
     let newP = document.createElement("p");
     newP.textContent = project.name;
     container.append(newP);
@@ -155,6 +160,8 @@ function checkPushDelete(projects) {
 
   if (pushValue) {
     displayProject.textContent = pushValue;
+    console.log(pushValue)
+    console.log(projects[0].name)
 
     // Filter projects for project name
     let onlyProjectArray = projects.filter(

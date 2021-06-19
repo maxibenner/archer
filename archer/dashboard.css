@@ -214,15 +214,27 @@
 	position: relative;
 }
 .dashboard--delete-body > p {
+	/*DEMO*/
+	pointer-events: none!important;
+	opacity: .1!important;
+	/*_______*/
 	color: var(--medium);
 	margin-bottom: 4%;
 }
 .dashboard--delete-body > p > span {
+	/*DEMO*/
+	pointer-events: none!important;
+	opacity: .1!important;
+	/*_______*/
 	color: var(--dark);
 	font-weight: bold;
 	font-family: ;
 }
 .dashboard--delete-body > input {
+	/*DEMO*/
+	pointer-events: none!important;
+	opacity: .1!important;
+	/*_______*/
 	box-sizing: border-box;
     height: 50px;
 	width: 100%;
@@ -241,6 +253,10 @@
 	margin: 0 0 0 auto;
 }
 .dashboard--delete-body-button-delete{
+	/*DEMO*/
+	pointer-events: none!important;
+	opacity: .1!important;
+	/*_______*/
 	padding: 10px 15px;
 	background: var(--lightestGrey);
 	color: var(--placeholder);
