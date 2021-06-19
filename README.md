@@ -2,7 +2,7 @@
 
 [![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fmaxibenner%2Fmerch)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fmaxibenner%2Farcher)
 
-Teeshot is a tool to create CG images and animations of t-shirt designs.
+Archer is a photo studio that runs in the browser. It enables brands to create photorealistic images from 3D models.
 
 
 [Live Demo](https://archer.fotura.co)
