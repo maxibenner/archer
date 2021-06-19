@@ -6,6 +6,7 @@ A CG based photo studio that runs in the browser. It enables brands to create ph
 
 ## Archer
 Archer is the customer facing app and contains the virtual photo studio as well as an interface to order 3D models from snapshots of a product. 
+<br/>
 [Live Demo](https://archer.fotura.co)
 
 ## Pro
