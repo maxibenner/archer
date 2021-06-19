@@ -372,11 +372,11 @@ async function setRenders(userId, container) {
           //   .child("images");
 
           // Exchange download icon for percentage
-          imgContainer.removeChild(img);
-          let progressTracker = document.createElement("p");
-          progressTracker.textContent = "0%";
-          progressTracker.classList.add("disable-select");
-          imgContainer.append(progressTracker);
+          //DEMO: imgContainer.removeChild(img);
+          // let progressTracker = document.createElement("p");
+          // progressTracker.textContent = "0%";
+          // progressTracker.classList.add("disable-select");
+          // imgContainer.append(progressTracker);
 
           // Download file
           let dl = document.createElement("a");
